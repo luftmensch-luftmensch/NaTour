@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LoginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_background"
+    android:padding="20dp">
+
+    <!-- Titolo -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TitoloLayout_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <ImageView
+            android:id="@+id/LogoImageView_login"
+            android:layout_width="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/natour"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/NaTourTextView_login"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/InserisciCredenzialiTextView"
+            app:layout_constraintLeft_toRightOf="@id/LogoImageView_login"
+            android:fontFamily="sans-serif-light"
+            android:gravity="bottom"
+            android:text="@string/NaTour"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/InserisciCredenzialiTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintTop_toBottomOf="@id/NaTourTextView_login"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/LogoImageView_login"
+            android:fontFamily="sans-serif"
+            android:text="@string/InserireCredenziali"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Recupero password popup -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RecuperoPasswordPopup_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/RecuperoPasswordCardView_popup_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/RecuperoPasswordLayout_popup_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/RecuperoPasswordTextView_popup_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/RecuperoPasswordTextInputLayout_popup_login"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@string/RecuperoPasswordTextView"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/RecuperoPasswordTextInputLayout_popup_login"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    app:layout_constraintTop_toBottomOf="@id/RecuperoPasswordTextView_popup_login"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/ConfermaRecuperoPasswordButton_popup_login"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/UsernameRecuperoPasswordPopup">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/RecuperoPasswordEditText_popup_login"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textPersonName"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/AnnullaRecuperoPasswordButton_popup_login"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/ConfermaRecuperoPasswordButton_popup_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:backgroundTint="@color/tema_scuro_testi"
+                    android:text="@string/Annulla"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/red" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ConfermaRecuperoPasswordButton_popup_login"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/AnnullaRecuperoPasswordButton_popup_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:backgroundTint="@color/verde_scuro"
+                    android:text="@string/Conferma"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/tema_scuro_testi" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Conferma codice popup -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/NuovaPasswordPopup_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/NuovaPasswordCardView_popup_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/NuovaPasswordLayout_popup_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/NuovaPasswordTextView_popup_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@string/NuovaPasswordTextView"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NuovaPasswordTextInputLayout_popup_login"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    app:layout_constraintTop_toBottomOf="@id/NuovaPasswordTextView_popup_login"
+                    app:layout_constraintBottom_toTopOf="@id/ConfermaCodiceTextInputLayout_popup_login"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:hint="@string/NuovaPasswordHint"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NuovaPasswordEditText_popup_login"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ConfermaCodiceTextInputLayout_popup_login"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    app:layout_constraintTop_toBottomOf="@id/NuovaPasswordTextInputLayout_popup_login"
+                    app:layout_constraintBottom_toTopOf="@id/ConfermaNuovaPasswordButton_popup_login"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/ConfCode">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ConfermaCodiceEditText_popup_login"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/AnnullaNuovaPasswordButton_popup_login"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/ConfermaNuovaPasswordButton_popup_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:backgroundTint="@color/tema_scuro_testi"
+                    android:text="@string/Annulla"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/red" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ConfermaNuovaPasswordButton_popup_login"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/AnnullaNuovaPasswordButton_popup_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:backgroundTint="@color/verde_scuro"
+                    android:text="@string/Conferma"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/tema_scuro_testi" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Form -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/FormLayout_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ConfermaLayout_login"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TitoloLayout_login"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.legacy.widget.Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/UsernameTextInput_login"
+                style="@style/NaTour.Login.TextInputLayout"
+                android:hint="@string/Username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/UsernameEditText_login"
+                    style="@style/Natour.Login.TextInputLayout.EditText"
+                    android:inputType="textPersonName" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/PasswordLayout_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/PasswordTextInput_login"
+                    style="@style/NaTour.Login.TextInputLayout"
+                    android:hint="@string/Password"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/PasswordEditText_login"
+                        style="@style/Natour.Login.TextInputLayout.EditText"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/PasswordDimenticataTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ForgetPass"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/PasswordTextInput_login" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/GoogleLoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00000000"
+                android:contentDescription="@string/AccediConGoogle"
+                app:srcCompat="@drawable/google_logo" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Conferma -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConfermaLayout_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintBottom_toTopOf="@id/NoAccountLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ConfermaButton_login"
+            style="@style/NaTour.NuovoItinerario.MaterialButton"
+            android:layout_width="150dp"
+            android:backgroundTint="@color/verde_chiaro"
+            android:elevation="10dp"
+            android:text="@string/Login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Passaggio a login -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/NoAccountLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/NoAccountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|start"
+            android:text="@string/NoAccount"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/SignUpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center|start"
+            android:text="@string/SignUp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toRightOf="@id/NoAccountTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

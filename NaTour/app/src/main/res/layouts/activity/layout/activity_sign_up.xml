@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	android:id="@+id/SignUpLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_background"
+    android:padding="20dp">
+
+	<!-- Titolo -->
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/TitoloLayout_signup"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintHeight_default="percent"
+		app:layout_constraintHeight_percent="0.2"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent">
+
+		<ImageView
+			android:id="@+id/LogoImageView_signup"
+			android:layout_width="0dp"
+			app:layout_constraintDimensionRatio="1:1"
+			android:layout_height="match_parent"
+			app:srcCompat="@drawable/natour"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintTop_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			android:contentDescription="@string/app_name"/>
+
+		<TextView
+			android:id="@+id/NaTourTextView_signup"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:fontFamily="sans-serif-light"
+			android:gravity="bottom"
+			android:text="@string/NaTour"
+			android:textColor="@color/black"
+			android:textSize="28sp"
+			app:layout_constraintBottom_toTopOf="@id/RegistrazioneTextView"
+			app:layout_constraintHeight_default="percent"
+			app:layout_constraintHeight_percent="0.5"
+			app:layout_constraintLeft_toRightOf="@id/LogoImageView_signup"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/RegistrazioneTextView"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:layout_constraintHeight_default="percent"
+			app:layout_constraintHeight_percent="0.5"
+			app:layout_constraintTop_toBottomOf="@id/NaTourTextView_signup"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toRightOf="@id/LogoImageView_signup"
+			app:layout_constraintRight_toRightOf="parent"
+			android:fontFamily="sans-serif"
+			android:text="@string/RegistraNuovoAccount"
+			android:textColor="@color/black"
+			android:textSize="16sp" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!-- Termini e condizioni popup -->
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/TerminiCondizioniPopup_signup"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:elevation="100dp"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:visibility="gone">
+
+		<androidx.cardview.widget.CardView
+			android:id="@+id/TerminiCondizioniCardView_popup_signup"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:elevation="3dp"
+			android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+			android:layout_marginTop="15dp"
+			app:cardCornerRadius="15dp"
+			android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+			android:outlineSpotShadowColor="@color/tema_scuro_testi"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/TerminiCondizioniLayout_popup_signup"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:padding="15dp">
+
+				<com.google.android.material.textview.MaterialTextView
+					android:id="@+id/TerminiCondizioniTextView_popup_signup"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintBottom_toTopOf="@id/ConfermaButton_popup_signup"
+					android:layout_marginBottom="15dp"
+					android:text="@string/TerminiCondizioni"
+					android:textSize="20sp"/>
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/AnnullaButton_popup_signup"
+					android:layout_width="0dp"
+					android:layout_height="60dp"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintRight_toLeftOf="@id/ConfermaButton_popup_signup"
+					app:layout_constraintBottom_toBottomOf="parent"
+					android:backgroundTint="@color/tema_scuro_testi"
+					android:text="@string/Annulla"
+					android:textAllCaps="false"
+					android:textColor="@color/black"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					app:cornerRadius="30dp"
+					app:rippleColor="@color/red" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/ConfermaButton_popup_signup"
+					android:layout_width="0dp"
+					android:layout_height="60dp"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintLeft_toRightOf="@id/AnnullaButton_popup_signup"
+					app:layout_constraintBottom_toBottomOf="parent"
+					android:layout_marginStart="15dp"
+					android:backgroundTint="@color/verde_scuro"
+					android:text="@string/Conferma"
+					android:textAllCaps="false"
+					android:textColor="@color/white"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					app:cornerRadius="30dp"
+					app:rippleColor="@color/tema_scuro_testi" />
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</androidx.cardview.widget.CardView>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!-- Conferma codice popup -->
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/ConfermaCodicePopup_signup"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:elevation="100dp"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:visibility="gone">
+
+		<androidx.cardview.widget.CardView
+			android:id="@+id/ConfermaCodiceCardView_popup_signup"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:elevation="3dp"
+			android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+			android:layout_marginTop="15dp"
+			app:cardCornerRadius="15dp"
+			android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+			android:outlineSpotShadowColor="@color/tema_scuro_testi"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/ConfermaCodiceLayout_popup_signup"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:padding="15dp">
+
+				<com.google.android.material.textview.MaterialTextView
+					android:id="@+id/ConfermaCodiceTextView_popup_signup"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintLeft_toLeftOf="parent"
+					android:text="@string/InserisciCodiceDiConferma"
+					android:textSize="20sp"
+					android:textAlignment="center"
+					android:textStyle="bold"/>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/ConfermaCodiceTextInputLayout_popup_signup"
+					style="@style/NaTour.NuovoItinerario.TextInputLayout"
+					app:layout_constraintTop_toBottomOf="@id/ConfermaCodiceTextView_popup_signup"
+					app:layout_constraintBottom_toTopOf="@id/ConfermaCodiceButton_popup_signup"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintLeft_toLeftOf="parent"
+					android:layout_marginBottom="10dp"
+					android:hint="@string/ConfCode">
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/ConfermaCodiceEditText_popup_signup"
+						style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+						android:inputType="number" />
+
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/AnnullaCodiceButton_popup_signup"
+					android:layout_width="0dp"
+					android:layout_height="60dp"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintRight_toLeftOf="@id/ConfermaCodiceButton_popup_signup"
+					app:layout_constraintBottom_toBottomOf="parent"
+					android:backgroundTint="@color/tema_scuro_testi"
+					android:text="@string/Annulla"
+					android:textAllCaps="false"
+					android:textColor="@color/black"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					app:cornerRadius="30dp"
+					app:rippleColor="@color/red" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/ConfermaCodiceButton_popup_signup"
+					android:layout_width="0dp"
+					android:layout_height="60dp"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintLeft_toRightOf="@id/AnnullaCodiceButton_popup_signup"
+					app:layout_constraintBottom_toBottomOf="parent"
+					android:layout_marginStart="15dp"
+					android:backgroundTint="@color/verde_scuro"
+					android:text="@string/Conferma"
+					android:textAllCaps="false"
+					android:textColor="@color/white"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					app:cornerRadius="30dp"
+					app:rippleColor="@color/tema_scuro_testi" />
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</androidx.cardview.widget.CardView>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!-- Form -->
+	<androidx.core.widget.NestedScrollView
+		android:id="@+id/FormLayout_signup"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintHeight_default="percent"
+		app:layout_constraintHeight_percent="0.6"
+		app:layout_constraintBottom_toTopOf="@id/ConfermaLayout_signup"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/TitoloLayout_signup">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<androidx.legacy.widget.Space
+				android:layout_width="wrap_content"
+				android:layout_height="15dp" />
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/UsernameTextInput_signup"
+				style="@style/NaTour.Login.TextInputLayout"
+				android:hint="@string/Username">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/UsernameEditText_signup"
+					style="@style/Natour.Login.TextInputLayout.EditText"
+					android:inputType="textPersonName" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/EmailTextInput_signup"
+				style="@style/NaTour.Login.TextInputLayout"
+				android:layout_marginTop="15dp"
+				android:hint="@string/Email">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/EmailEditText_signup"
+					style="@style/Natour.Login.TextInputLayout.EditText"
+					android:inputType="textEmailAddress"
+					tools:ignore="TextContrastCheck" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/PasswordTextInput_signup"
+				style="@style/NaTour.Login.TextInputLayout"
+				android:layout_marginTop="15dp"
+				android:hint="@string/Password"
+				app:endIconMode="password_toggle"
+				app:endIconTint="@color/white">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/PasswordEditText_signup"
+					style="@style/Natour.Login.TextInputLayout.EditText"
+					android:inputType="textPassword"
+					tools:ignore="TextContrastCheck" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/ConfermaPasswordTextInput_signup"
+				style="@style/NaTour.Login.TextInputLayout"
+				android:layout_marginTop="15dp"
+				android:hint="@string/RepeatPassword"
+				app:endIconMode="password_toggle"
+				app:endIconTint="@color/white">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/ConfermaPasswordEditText_signup"
+					style="@style/Natour.Login.TextInputLayout.EditText"
+					android:inputType="textPassword" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				android:textColor="@color/white"
+				android:text="@string/RegexLunghezzaPassword"
+				android:textStyle="bold"/>
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:textColor="@color/white"
+				android:text="@string/RegexNumeroPassword"
+				android:textStyle="bold"/>
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:textColor="@color/white"
+				android:text="@string/RegexCarattereMaiuscoloPassword"
+				android:textStyle="bold"/>
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:textColor="@color/white"
+				android:text="@string/RegexSimboloPassword"
+				android:textStyle="bold"/>
+
+			<ImageButton
+				android:id="@+id/GoogleSignUpButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				android:backgroundTint="@color/transparent"
+				android:contentDescription="@string/AccediConGoogle"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/google_logo" />
+
+			<androidx.legacy.widget.Space
+				android:layout_width="wrap_content"
+				android:layout_height="15dp" />
+
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+	<!-- Conferma -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConfermaLayout_signup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+		app:layout_constraintHeight_default="percent"
+		app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintBottom_toTopOf="@id/GiaRegistratoLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/ConfermaButton_signup"
+			style="@style/NaTour.NuovoItinerario.MaterialButton"
+			android:layout_width="150dp"
+			android:backgroundTint="@color/verde_chiaro"
+			android:elevation="10dp"
+			android:text="@string/SignUp"
+			android:textColor="@color/black"
+			android:layout_margin="10dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!-- Passaggio a login -->
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/GiaRegistratoLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent">
+
+		<TextView
+			android:id="@+id/GiaRegistratoTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:gravity="center|start"
+			android:text="@string/GiaRegistrato"
+			android:textColor="@color/white"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:ignore="TextContrastCheck" />
+
+		<TextView
+			android:id="@+id/LoginTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:gravity="center|start"
+			android:text="@string/Login"
+			android:textColor="@color/white"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toRightOf="@id/GiaRegistratoTextView"
+			app:layout_constraintTop_toTopOf="parent"
+			android:layout_marginStart="10dp"
+			tools:ignore="TextContrastCheck" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

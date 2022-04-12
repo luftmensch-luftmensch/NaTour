@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".view.fragment.ProfiloFragment">
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="15dp"
+		android:layout_marginStart="15dp"
+		android:scrollbars="none"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<include
+				android:id="@+id/TitoloLayout_profilo"
+				layout="@layout/card_titolo_layout" />
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/ItinerariLayout_profilo"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:elevation="3dp"
+				android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+				android:layout_marginTop="15dp"
+				app:cardCornerRadius="15dp"
+				android:outlineAmbientShadowColor="@color/tema_scuro_testi">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical"
+					android:padding="15dp">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:fontFamily="sans-serif-black"
+						android:text="@string/TitoloCardItinerariProfilo"
+						android:textAlignment="textStart"
+						android:textColor="@color/tema_scuro_testi"
+						android:textSize="18sp" />
+
+					<androidx.recyclerview.widget.RecyclerView
+						android:id="@+id/ItinerariRecyclerView_profilo"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+				</LinearLayout>
+
+			</androidx.cardview.widget.CardView>
+
+			<androidx.legacy.widget.Space
+				android:layout_width="match_parent"
+				android:layout_height="100dp" />
+
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+	<!-- Popup per visualizzare la foto profilo zoomata -->
+	<androidx.cardview.widget.CardView
+		android:id="@+id/VisualizzaFotoProfiloCardView"
+		android:layout_width="match_parent"
+		android:layout_height="300dp"
+		android:elevation="100dp"
+		android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+		android:layout_margin="15dp"
+		app:cardCornerRadius="15dp"
+		android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+		android:outlineSpotShadowColor="@color/tema_scuro_testi"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		android:visibility="gone">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/VisualizzaFotoProfiloLayout"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+			android:padding="15dp">
+
+			<ImageView
+				android:id="@+id/FotoProfiloImageView_visualizzaCard"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="fitCenter"
+				android:adjustViewBounds="true"
+				android:contentDescription="@string/contentDescription"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent" />
+
+			<ImageButton
+				android:id="@+id/ModificaFotoProfiloButton_visualizzaCard"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/squircle_background"
+				app:srcCompat="@drawable/new_message_36dp"
+				app:tint="@color/tema_scuro_testi"
+				android:backgroundTint="#40000000"
+				android:padding="10dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				android:visibility="visible"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

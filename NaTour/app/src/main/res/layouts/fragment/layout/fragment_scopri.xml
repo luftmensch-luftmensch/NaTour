@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScopriFragmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="15dp"
+    android:layout_marginStart="15dp"
+    android:scrollbars="none"
+    tools:context=".view.fragment.ScopriFragment">
+
+    <!-- Bottoni per passare da / a ScopriLista e ScopriMappa -->
+    <!-- <LinearLayout
+        android:id="@+id/ScopriListaMappaButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/squircle_background"
+        android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+        android:layout_margin="15dp"
+        android:elevation="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ScopriListaButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/squircle_background"
+            android:gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:padding="15dp"
+            android:text="@string/ScopriListaButton"
+            android:textSize="20sp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ScopriMappaButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/squircle_background"
+            android:gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:padding="15dp"
+            android:text="@string/ScopriMappaButton"
+            android:textSize="20sp"/>
+
+    </LinearLayout> -->
+    <!-- app:layout_constraintTop_toBottomOf="@id/ScopriListaMappaButtonLayout" -->
+
+    <!-- Layout per ScopriLista -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/IniziaRicercaTextView_scopri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/IniziaRicercaDescription"
+            android:textAlignment="center"
+            android:textColor="@color/tema_scuro_testi"
+            android:textSize="34sp"
+            android:textStyle="bold|italic"
+            android:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ScopriRecyclerView_lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+    </LinearLayout>
+
+    <!-- Layout per ScopriMappa -->
+    <!-- <org.osmdroid.views.MapView
+        android:id="@+id/MappaRicercaItinerari"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone" /> -->
+    <!-- <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ScopriRecyclerView_mappa"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginStart="15dp"
+        android:visibility="gone"/> -->
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.FiltriFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/FiltriCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintHeight_max="300dp"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/TitoloTextView_filtri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/FiltriDescription"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:id="@+id/FiltriRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@id/FiltroNomeItinerario_radio">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/FiltroNomeItinerario_radio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FiltroNomeItinerario" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/FiltroDurataItinerario_radio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FiltroDurataItinerario"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/FiltroZonaItinerario_radio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FiltroZonaItinerario"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/FiltroUtenteProprietario_radio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FiltroUtenteProprietarioItinerario" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/FiltroRecenti_radio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FiltroRecenti" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/FiltriLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintHeight_max="300dp"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical" >
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/FiltriTextInputLayout"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/RicercaAppBarHint"
+                    android:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/FiltriEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textPersonName"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/FiltroZonaTextInputLayout"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/ZonaNuovoItinerario"
+                    app:endIconDrawable="@drawable/arrow_drop_down_36dp"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTint="@color/tema_scuro_testi"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/FiltroZonaAutoCompleteTextView"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:enabled="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/FiltroDurataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/OreTextInput_filtro"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/OreNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/OreEditText_filtro"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/MinutiTextInput_filtro"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/MinutiNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/MinutiEditText_filtro"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/SecondiTextInput_filtro"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/SecondiNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/SecondiEditText_filtro"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/FiltroDurataErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="16dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/red"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

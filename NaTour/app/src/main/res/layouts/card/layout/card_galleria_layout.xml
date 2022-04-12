@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:elevation="3dp"
+    android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="15dp"
+    android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+    android:outlineSpotShadowColor="@color/tema_scuro_testi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/TitoloTextView_galleria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/TitoloCardGalleria"
+            android:textAlignment="textStart"
+            android:textColor="@color/tema_scuro_testi"
+            android:textSize="18sp" />
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/GalleriaImageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            app:iss_auto_cycle="true"
+            app:iss_period="5000"
+            app:iss_delay="0"
+            app:iss_corner_radius="15"
+            app:iss_title_background="@style/Theme.PlayCore.Transparent" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+        android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+        android:outlineSpotShadowColor="@color/tema_scuro_testi"
+        android:elevation="3dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/MessaggioTextView_destinatario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|bottom"
+                android:text="@string/MessaggioDestinatario"
+                android:textAlignment="textStart"
+                android:textColor="@color/tema_scuro_testi"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/InformazioniInvioLayout_destinatario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start|bottom">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/OraInvioTextView_destinatario"
+                    android:text="@string/OraInvioMessaggio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-light"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="14sp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="•"
+                    tools:ignore="HardcodedText"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="14sp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/DataInvioTextView_destinatario"
+                    android:text="@string/DataInvioMessaggio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-light"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

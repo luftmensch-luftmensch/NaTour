@@ -1,0 +1,157 @@
+<resources>
+    <!-- Informazioni Generali -->
+    <string name="app_name">NaTour</string>
+    <string name="NaTour">NaTour</string>
+
+    <!-- Pagina iniziale -->
+    <string name="MessaggioDiBenvenuto">\"Un nuovo modo per fare trekking!\"</string>
+
+    <!-- Login & SignUp -->
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
+    <string name="RepeatPassword">Conferma password</string>
+    <string name="Email">Email</string>
+    <string name="Username">Username</string>
+    <string name="SignUp">Registrati</string>
+    <string name="ConfCode">Scrivi qui il codice di conferma</string>
+    <string name="Conferma">Conferma</string>
+    <string name="ForgetPass">Password dimenticata?</string>
+    <string name="TerminiCondizioni">Accetti i <a href="https://www.privacypolicies.com/it/generatore-termini-e-condizioni/">termini e condizioni d\'uso</a> di ©NaTour?</string>
+    <string name="AccediConGoogle">Accedi con Google</string>
+    <string name="NoAccount">Non hai ancora un account?</string>
+    <string name="GiaRegistrato">Già registrato?</string>
+    <string name="Titolo">NaTour</string>
+    <string name="InserireCredenziali">Inserisci le tue credenziali</string>
+    <string name="RegistraNuovoAccount">Registra un nuovo account</string>
+    <string name="InserisciCodiceDiConferma">Inserisci codice di conferma</string>
+    <string name="RegexLunghezzaPassword">• La password deve contenere almeno 8 caratteri</string>
+    <string name="RegexNumeroPassword">• La password deve contenere almeno un numero</string>
+    <string name="RegexCarattereMaiuscoloPassword">• La password deve contenere almeno una lettera maiuscola</string>
+    <string name="RegexSimboloPassword">• La password deve contenere almeno un simbolo</string>
+
+    <!-- Nuovo itinerario -->
+    <string name="NomeNuovoItinerario">Nome*</string>
+    <string name="ZonaNuovoItinerario">Zona geografica*</string>
+    <string-array name="ZoneItinerario">
+        <item>Collina</item>
+        <item>Montagna</item>
+        <item>Città</item>
+        <item>Pianura</item>
+        <item>Mare</item>
+    </string-array>
+    <string name="ImmagineNuovoItinerario">Inserisci immagine</string>
+    <string name="LunghezzaNuovoItinerario">Lunghezza*</string>
+    <string name="DislivelloNuovoItinerario">Dislivello*</string>
+    <string name="CittaNuovoItinerario">Città*</string>
+    <string name="DescrizioneNuovoItinerario">Descrizione</string>
+    <string name="DurataNuovoItinerario">Durata*</string>
+    <string name="OreNuovoItinerario">Ore*</string>
+    <string name="MinutiNuovoItinerario">Minuti*</string>
+    <string name="SecondiNuovoItinerario">Secondi*</string>
+    <string name="DifficoltaNuovoItinerario">Difficoltà*</string>
+    <string-array name="DifficoltaItinerario">
+        <item>@string/Difficolta_facile</item>
+        <item>@string/Difficolta_non_molto_facile</item>
+        <item>@string/Difficolta_medio</item>
+        <item>@string/Difficolta_difficile</item>
+        <item>@string/Difficolta_molto_difficile</item>
+    </string-array>
+    <string name="TagNuovoItinerario">Tag di ricerca</string>
+
+    <!-- Mappa -->
+    <string name="ScopriListaButton">Lista</string>
+    <string name="ScopriMappaButton">Mappa</string>
+
+    <!-- Menu inferiore e titoli fragment -->
+    <string name="HomeButton">Home</string>
+    <string name="ScopriButton">Scopri</string>
+    <string name="MessaggiButton">Messaggi</string>
+    <string name="ProfiloButton">Profilo</string>
+    <string name="ItinerarioFragment">Itinerario</string>
+    <string name="FiltriFragment">Filtra la ricerca</string>
+    <string name="NuovoItinerarioFragment">Nuovo itinerario</string>
+
+    <!-- CardLayout -->
+    <string name="NomeItinerario">Nome:</string>
+
+    <string name="DifficoltaDescription">Indica la difficoltà dell\'itinerario</string>
+    <string name="Difficolta_facile">Facile</string>
+    <string name="Difficolta_non_molto_facile">Non molto facile</string>
+    <string name="Difficolta_medio">Medio</string>
+    <string name="Difficolta_difficile">Difficile</string>
+    <string name="Difficolta_molto_difficile">Molto difficile</string>
+
+    <string name="DisabilitaDescription">Il percorso è accessibile ai disabili?</string>
+    <string name="Disabilita_accessibile">Accessibile ai disabili</string>
+    <string name="Disabilita_non_accessibile">Non accessibile ai disabili</string>
+
+    <string name="TitoloCard">Titolo</string>
+    <string name="SottotitoloCard">Sottotitolo</string>
+    <string name="TitoloCardItinerariProfilo">Gli itinerari</string>
+    <string name="TitoloCardAutore">Autore dell\'itinerario</string>
+    <string name="TitoloCardMappa">Informazioni generali</string>
+    <string name="MappaImageView">Visualizza\nmappa</string>
+    <string name="MappaPlaceholderDescription">Placeholder di una mappa</string>
+    <string name="TitoloCardGalleria">Galleria</string>
+    <string name="TitoloCardTag">Tag di ricerca</string>
+    <string name="TitoloCardDescrizione">Descrizione</string>
+    <string name="TitoloCardCaratteristiche">Caratteristiche del percorso</string>
+    <string name="TitoloCardPuntoInizio">Punto di inizio</string>
+    <string name="TitoloCardPuntoFine">Punto di fine</string>
+    <string name="TitoloCardInformazioni">Informazioni del percorso</string>
+
+    <string name="Descrizione">Descrizione:</string>
+    <string name="UsernameAutore">Username:</string>
+    <string name="EmailAutore">Email:</string>
+    <string name="CittaItinerario">Città:</string>
+    <string name="ZonaGeografica">Zona geografica:</string>
+    <string name="Dislivello">Dislivello:</string>
+    <string name="DurataItinerario">Durata:</string>
+    <string name="Lunghezza">Lunghezza:</string>
+    <string name="Latitudine">Latitudine:</string>
+    <string name="Longitudine">Longitudine:</string>
+    <string name="FiltriDescription">Applica altri filtri</string>
+    <string name="NuovoItinerarioDescription">Apre la schermata per la creazione di un nuovo itinerario</string>
+    <string name="IconaLogout">Logout</string>
+    <string name="IconaChiudi">Chiudi</string>
+
+    <string name="DestinatarioMessaggioCard">Destinatario</string>
+    <string name="RicercaEditTextHint">Ricerca</string>
+    <string name="IniziaRicercaDescription">Per iniziare una ricerca clicca sulla lente\n\nPer iniziare una ricerca avanzata clicca sulle impostazioni</string>
+    <string name="InviaMessaggioDescription">Permette di inviare il messaggio scritto</string>
+    <string name="FotoProfiloDescription">Mostra la foto profilo dell\'utente</string>
+    <string name="InviaMessaggioPlaceholder">Scrivi qui il tuo messaggio</string>
+    <string name="MessaggioMittente">Messaggio del mittente</string>
+    <string name="DataInvioMessaggio">Data di invio</string>
+    <string name="OraInvioMessaggio">Ora di invio</string>
+    <string name="MessaggioDestinatario">Messaggio del destinatario</string>
+    <string name="FAB_Description">Questo bottone è multifunzionale</string>
+    <string name="SelezionaPuntiMappaButton">Seleziona punti su mappa</string>
+    <string name="EliminaSelezionePunti">Elimina punti</string>
+    <string name="ImportaFileGPXButton">Importa un file .GPX</string>
+    <string name="Annulla">Annulla</string>
+    <string name="CampoObbligatorio">Questo campo è obbligatorio</string>
+
+    <string name="contentDescription">Descrizione immagine</string>
+    <string name="ImmagineItinerarioTextView">Vuoi inserire anche un\'immagine per questo itinerario?</string>
+    <string name="DisabilitaItinerario">Accesso disabili</string>
+    <string name="DifficoltaItinerario">Livello di difficoltà</string>
+    <string name="RicercaAppBarHint">Inserisci qui il testo di ricerca</string>
+
+    <string name="IconaSegnalaItinerario">Segnala itinerario</string>
+    <string name="SegnalazioneFotoItinerario">Vuoi segnalare questa foto?</string>
+
+    <!-- RadioButton per FiltriFragment -->
+    <string name="FiltroNomeItinerario">Ricerca itinerario per nome</string>
+    <string name="FiltroDurataItinerario">Ricerca itinerario per durata</string>
+    <string name="FiltroZonaItinerario">Ricerca itinerario per zona</string>
+    <string name="FiltroUtenteProprietarioItinerario">Ricerca itinerario per autore</string>
+    <string name="FiltroRecenti">Ordina dal più recente</string>
+
+    <!-- Recupero password popup e nuova password popup -->
+    <string name="RecuperoPasswordTextView">Recupera la tua password</string>
+    <string name="UsernameRecuperoPasswordPopup">Inserisci il tuo username</string>
+    <string name="NuovaPasswordTextView">Inserisci una nuova password</string>
+    <string name="NuovaPasswordHint">Scrivi qui la nuova password</string>
+
+</resources>

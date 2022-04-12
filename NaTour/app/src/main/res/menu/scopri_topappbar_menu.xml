@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/RicercaButton"
+        android:icon="@drawable/search_36dp"
+        android:title="@string/FiltriFragment"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/FiltriButton"
+        android:icon="@drawable/filter_36dp"
+        android:title="@string/FiltriDescription"
+        app:showAsAction="always"/>
+</menu>

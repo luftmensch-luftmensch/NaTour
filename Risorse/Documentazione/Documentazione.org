@@ -1,0 +1,2070 @@
+#+begin_export latex
+\thispagestyle{empty}
+\newgeometry{margin=0pt}
+
+\begin{tikzpicture}[remember picture, overlay]
+ \begin{scope}
+
+   % STRUTTURA ESTERNA (ANGOLI E COLORAZIONE)
+   \node[
+     isosceles triangle,
+     isosceles triangle apex angle=90,
+     draw,
+     rotate=315,
+     fill=darkblue,
+     minimum size =55cm] (triangoloPrimoLivelloAngoloInferiore)
+   at ($(current page.south east)$)
+   {};
+
+   \node[
+     isosceles triangle,
+     isosceles triangle apex angle=90,
+     draw,
+     rotate=315,
+     fill=lightblue,
+     minimum size =50cm] (triangoloSecondoLivelloAngoloInferiore)
+   at ($(current page.south east)$)
+   {};
+
+   \node[
+     isosceles triangle,
+     isosceles triangle apex angle=90,
+     draw,
+     rotate=315,
+     fill=darkdark,
+     minimum size =35cm] (triangoloTerzoLivelloAngoloInferiore)
+   at ($(current page.south east)$)
+   {};
+
+   \node[
+     isosceles triangle,
+     isosceles triangle apex angle=90,
+     draw,
+     rotate=315,
+     fill=white,
+     minimum size =32cm] (triangoloQuartoLivelloAngoloInferiore)
+   at ($(current page.south east)$)
+   {};
+
+
+   \node[
+     isosceles triangle,
+     isosceles triangle apex angle=90,
+     draw,
+     rotate=135,
+     fill=white,
+     minimum size =31cm] (triangoloSuperiore)
+   at ($(current page.north west)$)
+   {};
+
+
+   % STRUTTURA DEL CERCHIO E IL SUO CONTENUTO
+   \node [circle, minimum size=15cm, fill=white, draw=darkblue, line width = 7pt, xshift=11cm, yshift=1cm](centro)
+   at ($(current page.west)$)
+   {};
+
+   \coordinate (logo) at (10.7,-7.5);
+   \node[rectangle, inner sep = 0pt, outer sep = 0pt, minimum width = 3.5cm, minimum height = 3.5cm]
+   at (logo){\includegraphics[width=3.5cm, height=3.5cm]{./Start-Page/FedericoII.png}};
+
+   \node[scale=1.7] at (8.35,-10){\LARGE{Progetto NaTour}};
+
+
+   \node[rectangle,
+     draw,
+     minimum width=4cm,
+     minimum height=2mm,
+     xshift= 7.18cm,
+     yshift= -11cm,
+     minimum height=2mm,
+     fill = darkblue] (r) at (0,0) {};
+
+   % Sostituire con un motto (Per il momento abbiamo pensato a "La tua nuova app per il trekking" (in corsivo(?)))
+   \node[scale=1.5] at (11,-13){\itshape{\LARGE{Università degli studi di Napoli}}};
+   \node[scale=1.5] at (11,-15){\itshape{\LARGE{Federico II}}};
+
+
+   %% STRUTTURA ANGOLO SINISTRO (angolo north-west)
+   \node[scale=3] at (1,-1){\includegraphics[height=10pt,width=10pt]{./Start-Page/calendar.png}};
+   \node[scale=2] at (6,-1){\itshape{\LARGE{A.A. 2021-2022}}};
+
+   %% STRUTTURA ANGOLO DESTRO (angolo south-east)
+   \node[scale=3] at (12,-24){\includegraphics[height=10pt,width=10pt]{./Start-Page/graduated.png}};
+   \node[scale=1.4] at (16.2, -24.3){Valentino Bocchetti - N86003405};
+
+
+   \node[scale=3] at (12,-26){\includegraphics[height=10pt,width=10pt]{./Start-Page/graduated.png}};
+   \node[scale=1.4] at (16.7, -26.3){Mario Gabriele Carofano - N86003228};
+
+ \end{scope}
+
+\end{tikzpicture}
+
+\newpage
+\restoregeometry
+% Reset del numero della pagina
+\setcounter{page}{0}
+\pagenumbering{roman} % Numerazione pagina per il toc
+\setcounter{page}{1}
+
+\renewcommand*\contentsname{\hfill Indice \hfill}
+\thispagestyle{empty}\null\newpage
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic} % Numerazione pagina per i capitoli
+#+end_export
+#+OPTIONS: date:nil title:nil toc:nil
+#+STARTUP: overview
+#+SETUPFILE: ./setup-org-latex.setup
+#+LATEX: \pagebreak
+* Revisioni
+#+ATTR_LATEX: :align |l|l|l|l|
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+| Versione |       Data | Autore                  | Descrizione                                                     |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|      0.1 | 01-11-2021 | Valentino Bocchetti     | Creazione della struttura del documento e strutturazione        |
+|          |            | Mario Gabriele Carofano | dell'albero di lavoro                                           |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|      0.2 | 11-11-2021 | Valentino Bocchetti     | Completamento intestazione e struttura del documento            |
+|          |            | Mario Gabriele Carofano |                                                                 |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|      0.3 | 25-11-2021 | Valentino Bocchetti     | Inizio stesura della modellazione dei Casi d'Uso                |
+|          |            | Mario Gabriele Carofano |                                                                 |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.3.1 | 27-11-2021 | Valentino Bocchetti     | Completamento stesura della modellazione dei Casi d'Uso.        |
+|          |            | Mario Gabriele Carofano | Inizio stesura delle Tabelle di Cockburn                        |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.3.2 | 28-11-2021 | Valentino Bocchetti     | Completamento stesura delle Tabelle di Cockburn                 |
+|          |            | Mario Gabriele Carofano | Creazione dei mock-up per l'interfaccia Utente                  |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|      0.4 | 02-12-2021 | Valentino Bocchetti     | Inizio stesura della presentazione                              |
+|          |            | Mario Gabriele Carofano |                                                                 |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|      0.5 | 07-12-2021 | Valentino Bocchetti     | Modifica Documentazione (Aggiunte informazioni sui contributori |
+|          |            | Mario Gabriele Carofano | e modifica bibliografia)                                        |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.1 | 07-12-2021 | Valentino Bocchetti     | Modifica Documentazione (Aggiunte Tabelle di Cockburn)          |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.2 | 12-12-2021 | Valentino Bocchetti     | Descrizione di Requisiti funzionali e non funzionali.           |
+|          |            | Mario Gabriele Carofano | Identificazione del target degli utenti.                        |
+|          |            |                         | Valutazione dell'usabilità a priori                             |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.3 | 17-01-2022 | Valentino Bocchetti     | Creazione progetto e primi test                                 |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.4 | 18-01-2022 | Valentino Bocchetti     | Refactoring e modifiche minori del progetto                     |
+|          |            |                         | (Aggiunta librerie per AWS e OSM)                               |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.5 | 24-01-2022 | Valentino Bocchetti     | Refactoring e creazione del Server per la gestione delle API    |
+|          |            |                         | (Inizializzazione del progetto con SpringBoot)                  |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.6 | 25-01-2022 | Valentino Bocchetti     | Primi test con Spring Boot e PostgreSQL                         |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.7 | 26-01-2022 | Valentino Bocchetti     | Mappatura parametri (Server) e refactoring                      |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.8 | 27-01-2022 | Valentino Bocchetti     | Refactoring + Aggiunta Best Practices per la Dependency         |
+|          |            |                         | Injection (Server)                                              |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.5.9 | 28-01-2022 | Valentino Bocchetti     | Introduzione delle classi DTO                                   |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.6.0 | 31-01-2022 | Valentino Bocchetti     | Migliorata gestione delle Request (Fix delle Request PUT)       |
+|          |            | Mario Gabriele Carofano | Test Applicativo (Backend/Frontend - Spring Boot + Retrofit)    |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.6.1 | 01-02-2022 | Valentino Bocchetti     | Introduzione della Chat lato Server + Refactoring               |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.6.2 | 02-02-2022 | Valentino Bocchetti     | Introduzione filtri per la ricerca degli itinerari              |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.6.3 | 04-02-2022 | Valentino Bocchetti     | Modifiche campi itinerario e sua gestione (Server)              |
+|          |            | Mario Gabriele Carofano | Modifiche minori nella documentazione                           |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+|    0.6.4 | 05-02-2022 | Valentino Bocchetti     | Aggiunta gestione delle foto per gli itinerari (lato Server)    |
+|----------+------------+-------------------------+-----------------------------------------------------------------|
+
+#+ATTR_LATEX: :align |l|l|l|l|
+|----------+------------+-------------------------+----------------------------------------------------------------|
+| Versione |       Data | Autore                  | Descrizione                                                    |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.6.5 | 07-02-2022 | Valentino Bocchetti     | Primi test collegamento Android con Spring Boot. Refactoring   |
+|          |            | Mario Gabriele Carofano | Modifica schermata Login (material design)                     |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.6.6 | 08-02-2022 | Valentino Bocchetti     | Migliorie sulla grafica (in accordo con il material design)    |
+|          |            | Mario Gabriele Carofano | refactoring                                                    |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.6.7 | 08-02-2022 | Valentino Bocchetti     | Introduzione di Rx-Java per le request secondo il pattern      |
+|          |            |                         | Observable                                                     |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.6.8 | 09-02-2022 | Valentino Bocchetti     | Completamento Mappatura Backend/Frontend (Request)             |
+|          |            |                         | Edit Minori                                                    |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.6.9 | 11-02-2022 | Valentino Bocchetti     | Completata transizione da Amplify ad RxJava-Amplify            |
+|          |            | Mario Gabriele Carofano | Testing con =Retrofit/SpringBoot= sugli itinerari                |
+|          |            |                         | (testing con le CardLayout)                                    |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.0 | 13-02-2022 | Valentino Bocchetti     | Implementazione del design pattern MVP.                        |
+|          |            | Mario Gabriele Carofano | Refactoring e modifiche minori                                 |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.1 | 14-02-2022 | Valentino Bocchetti     | Refactoring e modifiche minori                                 |
+|          |            | Mario Gabriele Carofano |                                                                |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.2 | 15-02-2022 | Valentino Bocchetti     | Gestione delle request e loro implementazione nell'applicativo |
+|          |            | Mario Gabriele Carofano | Bug fixes e refactoring                                        |
+|          |            |                         | Testing dell'applicativo                                       |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.2 | 15-02-2022 | Valentino Bocchetti     | Aggiunta istanze per tipo (Retrofit)                           |
+|          |            | Mario Gabriele Carofano | Creazione costanti e testing dell'applicativo                  |
+|          |            |                         | Bug fixes e refactoring                                        |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.3 | 17-02-2022 | Valentino Bocchetti     | Inizializzazione e implementazione della gestione dell'utente  |
+|          |            | Mario Gabriele Carofano | loggato (Applicativo android) e relativo testing               |
+|          |            |                         | Completamento gestione della grafica per gli Itinerari         |
+|          |            |                         | e Mappa                                                        |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.4 | 18-02-2022 | Valentino Bocchetti     | Migliorata la gestione dei dati in locale                      |
+|          |            | Mario Gabriele Carofano | Implementazione gestione immagini per l'applicativo mobile     |
+|          |            |                         | Aggiunta costanti                                              |
+|          |            |                         | Bug Fixes                                                      |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.5 | 20-02-2022 | Valentino Bocchetti     | Aggiornamenti e completamento schermata chat singola           |
+|          |            | Mario Gabriele Carofano |                                                                |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.6 | 24-02-2022 | Valentino Bocchetti     | Implementazione dell'inserimento interattivo di un nuovo       |
+|          |            | Mario Gabriele Carofano | itinerario mediante mappa interattiva                          |
+|          |            |                         | Refactoring                                                    |
+|          |            |                         | Migliorata grafica applicativo mobile                          |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+|    0.7.6 | 26-02-2022 | Valentino Bocchetti     | Implementazione della gestione dei singoli elementi nella      |
+|          |            | Mario Gabriele Carofano | RecyclerView (Applicativo mobile).                             |
+|          |            |                         | Refactoring e documentazione                                   |
+|----------+------------+-------------------------+----------------------------------------------------------------|
+
+#+ATTR_LATEX: :align |l|l|l|l|
+|----------+------------+-------------------------+------------------------------------------------------------------|
+| Versione |       Data | Autore                  | Descrizione                                                      |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.7.7 | 27-02-2022 | Valentino Bocchetti     | Refactoring top-level dell'applicativo mobile. Modifiche minori  |
+|          |            | Mario Gabriele Carofano |                                                                  |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.7.8 | 27-02-2022 | Valentino Bocchetti     | Implementazione gestione della vista dei singolo itinerario      |
+|          |            | Mario Gabriele Carofano | sull'Applicativo mobile                                          |
+|          |            |                         | Modifiche minori lato Server                                     |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.7.9 | 28-02-2022 | Valentino Bocchetti     | Implementazione gestione dei Tag (Lato Server). Edit minori      |
+|          |            | Mario Gabriele Carofano | Implementazione gestione dei Tag lato Client                     |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.7.9 | 28-02-2022 | Valentino Bocchetti     | Implementazione gestione delle Chat room (Lato Server).          |
+|          |            | Mario Gabriele Carofano | Implementazione gestione delle Chat room  lato Client            |
+|          |            |                         | Implementazione gestione delle info di un messaggio              |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.0 | 01-03-2022 | Valentino Bocchetti     | Implementazione gestione invio messaggi                          |
+|          |            | Mario Gabriele Carofano | Bug fixes                                                        |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.1 | 02-03-2022 | Valentino Bocchetti     | Collegamento bucket S3 - informazioni singolo itinerario         |
+|          |            | Mario Gabriele Carofano | Modifiche Profilo (Applicativo android)                          |
+|          |            |                         | Gestione della posizione corrente dell'utente                    |
+|          |            |                         | Gestione dell'inserimento di un itinerario mediante GPX          |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.2 | 04-03-2022 | Valentino Bocchetti     | Implementazione collegamento tra schermate  (Applicativo mobile) |
+|          |            | Mario Gabriele Carofano | Aggiunta di docker file. Bug fixes.                              |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.2 | 06-03-2022 | Valentino Bocchetti     | Aggiunta lambda per una mail custom durante la signup            |
+|          |            | Mario Gabriele Carofano | Modifiche minori                                                 |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.2 | 07-03-2022 | Valentino Bocchetti     | Aggiunta informazioni lato chat (Applicativo android)            |
+|          |            | Mario Gabriele Carofano | Testing sul logout dell'utente                                   |
+|          |            |                         | Completamento schermata filtri (Applicativo android)             |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.3 | 09-03-2022 | Valentino Bocchetti     | Aggiunta Javadoc (Backend)                                       |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|  0.8.3.1 | 09-03-2022 | Valentino Bocchetti     | Creazione applicativo mobile - Lato admin                        |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|  0.8.3.2 | 09-03-2022 | Valentino Bocchetti     | Implementazione componenti applicativo mobile (lato admin)       |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|  0.8.3.3 | 10-03-2022 | Valentino Bocchetti     | Aggiunta gestione degli admin (lato server)                      |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.4 | 10-03-2022 | Valentino Bocchetti     | Implementazione delle segnalazioni - Applicativo mobile (Utente) |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.5 | 10-03-2022 | Valentino Bocchetti     | Aggiunta degli itinerari nell'applicativo mobile                 |
+|          |            | Mario Gabriele Carofano |                                                                  |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.6 | 11-03-2022 | Valentino Bocchetti     | Implementazione gestione della mancata connessione al Server     |
+|          |            |                         | (Applicativo mobile - Utente e Admin)                            |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.7 | 11-03-2022 | Valentino Bocchetti     | Implementazione gestione della visualizzazione della mappa       |
+|          |            |                         | interattiva del percorso. Testing delle segnalazioni.            |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.8 | 11-03-2022 | Valentino Bocchetti     | Implementazione gestione della visualizzazione della mappa       |
+|          |            |                         | interattiva del percorso. Testing delle segnalazioni.            |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+|    0.8.9 | 11-03-2022 | Valentino Bocchetti     | Aggiunta gestione del tipo di utente loggato (tramite mail o     |
+|          |            |                         | con Google)                                                      |
+|----------+------------+-------------------------+------------------------------------------------------------------|
+
+#+ATTR_LATEX: :align |l|l|l|l|
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+| Versione |       Data | Autore                  | Descrizione                                                          |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.1 | 12-03-2022 | Valentino Bocchetti     | Implementazione gestione delle statistiche di utilizzo dei servizi   |
+|          |            | Mario Gabriele Carofano | Modifiche minori                                                     |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.2 | 12-03-2022 | Valentino Bocchetti     | Testing dell'applicativo mobile (Admin). Aggiunta funzionalità       |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.3 | 13-03-2022 | Valentino Bocchetti     | Implementazione della segnalazione sulla foto profilo del singolo    |
+|          |            |                         | itinerario                                                           |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.4 | 13-03-2022 | Valentino Bocchetti     | Aggiunta video per la presentazione del progetto                     |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.5 | 14-03-2022 | Valentino Bocchetti     | Implementazione della visualizzazione delle statistiche              |
+|          |            |                         | (Applicativo mobile - Admin).                                        |
+|          |            |                         | Aggiunta alla documentazione. Refactoring                            |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.6 | 15-03-2022 | Valentino Bocchetti     | Modifiche grafica delle statistiche                                  |
+|          |            |                         | Completamento gestione Applicativo mobile (Admin).                   |
+|          |            |                         | Refactoring e testing                                                |
+|          |            |                         | Aggiunte alla documentazione                                         |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.7 | 17-03-2022 | Valentino Bocchetti     | Implementazione richiesta di aggiunta di una foto aggiuntiva         |
+|          |            |                         | (Applicativo mobile)                                                 |
+|          |            |                         | Inizializzazione del Testing                                         |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.8 | 20-03-2022 | Valentino Bocchetti     | Aggiunte alla documentazione (Usabilità, Gerarchie funzionali)       |
+|          |            | Mario Gabriele Carofano | Introduzione del glossario                                           |
+|          |            |                         | Aggiunta opzioni custom per la gestione degli apk prodotti (release) |
+|          |            |                         | Modifica opzioni                                                     |
+|          |            |                         | Modifica della Presentazione dell'idea progettuale                   |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|  0.8.9.9 | 21-03-2022 | Valentino Bocchetti     | Aggiunta controlli sulla registrazione dell'utente.                  |
+|          |            |                         | Testing accesso con Provider esterno (Google)                        |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+|    0.9.0 | 22-03-2022 | Valentino Bocchetti     | Aggiunte alla documentazione. Modifiche minori.                      |
+|          |            | Mario Gabriele Carofano | Analisi del progetto                                                 |
+|----------+------------+-------------------------+----------------------------------------------------------------------|
+#+LATEX: \pagebreak
+* Documento dei Requisiti Software
+** Modello funzionale
+*** Modellazione dei Casi d'Uso
+Per la modellizzazione dei casi d'uso prendiamo in esame:
++ L'operazione per il =login/registrazione=, per utente (registrato o meno) e per gli amministratori del sistema;
++ Operazioni esclusive per utente (registrato) e amministratori.
+
+#+begin_center
+*Registrazione per nuovi utenti* 
+#+end_center
+#+begin_export latex
+\begin{minipage}{0.6\textwidth}% adapt widths of minipages to your needs
+  \includegraphics[width=\linewidth]{./UseCaseDiagram/Use Case Diagram per Utente non registrato.png}
+\end{minipage}%
+  \hfill%
+\begin{minipage}{0.35\textwidth}
+  NaTour prevede che un utente, per accedere debba essere registrato. Offriamo quindi 2 metodi:
+  \begin{itemize}
+    \item Registrazione con Google;
+    \item Registrazione con email, gestita internamente.
+  \end{itemize}
+\end{minipage}
+#+end_export
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+
+#+begin_center
+*Operazioni per utenti già registrati*
+#+end_center
+#+begin_export latex
+\begin{minipage}{0.55\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\linewidth]{./UseCaseDiagram/Use Case Diagram Utente registrato.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.45\textwidth}
+  L'utente, dopo ever effettuato l'accesso, ha la possibilità di effettuare diverse operazioni:
+  \begin{itemize}
+    \item \textbf{Creare un nuovo itinerario}, caratterizzato da:
+        \begin{itemize}
+        \item Nome;
+        \item Zona geografica (montagna, collina, mare, ...);
+        \item Durata minima del percorso (in ore);
+        \item Difficoltà, in relazione a dislivello e struttura del percorso;
+        \item Punto di inizio del percorso;
+        \item Punto di fine del percorso.
+        \end{itemize}
+    \item \textbf{Ricercare un itinerario}, secondo parole chiave oppure filtri offerti dalla piattaforma; % CI DOBBIAMO TORNARE PER UNA DEFINIZIONE MIGLIORE
+    \item \textbf{Visualizzare lo storico dei messaggi privati};
+    \item \textbf{Inviare un messaggio privato ad altri utenti}, per chiedere informazioni sui percorsi offerti;
+    \item \textbf{Segnalare fotografie inappropriate}. % AGGIUNGERE UNA CITAZIONE O UN PUNTO
+  \end{itemize}
+\end{minipage}
+#+end_export
+
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+#+begin_center
+*Operazioni per amministratori*
+#+end_center
+
+#+begin_export latex
+\begin{minipage}{0.5\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\linewidth]{./UseCaseDiagram/Use Case Diagram Amministratore.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.5\textwidth}
+  A differenza degli Utenti, gli account per gli amministratori sono già prefissati.
+  In seguito all'accesso, possono:
+  \begin{itemize}
+    \item \textbf{Visualizzare le statistiche di utilizzo}, caratterizzate da:
+      \begin{itemize}
+      \item Numero di utenti;
+      \item Numero di accessi (mensili, settimanali, giornalieri, ...);
+      \item Numero di ricerche (tag più cercati, città più cercate, zone più cercate, ...);
+      \end{itemize}
+  \end{itemize}
+\end{minipage}
+#+end_export
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+*** Tabelle di Cockburn (per 2 casi significativi)
+#+begin_center
+*Creazione itinerario* (Tabella 1)
+#+end_center
+
+#+ATTR_LATEX: :width 500px :height 570px
+[[file:Tabelle Di Cockburn/USE CASE 1/Tabella/Pagina 1.png]]
+#+ATTR_LATEX: :width 500px
+[[file:Tabelle Di Cockburn/USE CASE 1/Tabella/Pagina 2.png]]
+
+#+begin_center
+*Registrazione alla piattaforma con email* (Tabella 2)
+#+end_center
+#+ATTR_LATEX: :width 500px :height 540px
+[[file:Tabelle Di Cockburn/USE CASE 2/Tabella/Pagina 1.png]]
+#+ATTR_LATEX: :width 500px
+[[file:Tabelle Di Cockburn/USE CASE 2/Tabella/Pagina 2.png]]
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+*** Prototipazione visuale via Mock-up (per 2 casi significativi)
+#+begin_center
+*Mockup* relativo allo use case n° 1
+#+end_center
+
+Di seguito vengono riportati i mockup relativi a:
++ Homepage;
++ Profilo;
++ Popup per creare un nuovo itinerario;
++ Popup per la richiesta dei permessi necessari ad accedere al GPS;
++ Inserimento dei campi necessari per la creazione di un nuovo itinerario;
++ Inserimento di una foto per il nuovo itinerario appena creato;
++ Selezione dei punti di =inizio/fine= dell'itinerario su una mappa interattiva;
++ Avviso di errore nel caso in cui i campi obbligatori per la creazione di un nuovo itinerario o fossero mancanti;
++ Avviso di errore per il fallimento nella creazione di un nuovo itinerario;
++ Avviso di errore per il fallimento nel caricamento dell'immagine di un nuovo itinerario;
++ Avviso di errore nella selezione di un file in un formato non corretto;
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Homepage.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Profilo.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Nuovo Itinerario Popup.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+        \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Inserimento Permessi Popup.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Nuovo Itinerario.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Nuovo Itinerario - Inserimento immagine.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Seleziona Punti Mappa.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Popup errore - Campi obbligatori.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Popup errore - Errore creazione.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Popup errore - Errore inserimento immagine.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Popup errore - Errore punti mappa.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.31\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{/home/valentino/UNI/Progetto-NaTour/Risorse/Documentazione/Tabelle Di Cockburn/USE CASE 1/Mockup/Popup errore - Estensione non corretta.png}
+\end{minipage}%
+#+end_export
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+#+begin_center
+*Mockup* relativo allo use case n° 2
+#+end_center
+
+Di seguito vengono riportati i mockup relativi a:
++ Login di un utente già registrato;
++ Registrazione di un nuovo utente;
++ Termini e condizioni per la registrazione;
++ Codice di conferma per la registrazione;
++ Avviso di errore nel caso in cui i campi obbligatori fossero mancanti;
++ Avviso di errore durante la registrazione;
++ Avviso di errore nel caso in cui il formato della email non fosse corretto;
++ Avviso di errore nel caso in cui il formato della password non fosse corretto;
++ Avviso di errore nel caso in cui la lunghezza della password non fosse corretta;
++ Avviso di errore nel caso in cui le 2 password non corrispondessero;
+
+#+begin_export latex
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Login.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Sign-Up.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Termini e Condizioni Popup.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Codice di Conferma Popup.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup errore - Campi obbligatori.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup Errore - Errore registrazione.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup errore - Formato email non corretto.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup errore - Formato password non corretto.png}
+\end{minipage}%
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup errore - Lunghezza password.png}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.40\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\textwidth]{Tabelle Di Cockburn/USE CASE 2/Mockup/Popup errore - Password non uguali.png}
+\end{minipage}%
+#+end_export
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+*** Presentazione dell'idea progettuale
+#+begin_export latex
+\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{Risorse/Title.png}}
+#+end_export
+
+Se vi piacciono l’escursionismo e l’aria aperta, NaTour è l’app che fa per voi.
+
+#+begin_center
+Vi presentiamo NaTour!
+#+end_center
+
+NaTour è un'applicazione *mobile* di *social networking* dedicata agli *appassionati di trekking* in tutto il mondo, che permette loro di essere guidati nella natura, in un sentiero escursionistico o in altre attività all'aperto come trekking, ciclismo e sci grazie solo all'utilizzo di uno smartphone. NaTour è al momento disponibile solo su Android, ma si prevede lo sviluppo di applicativi anche per IOS e per il Web.
+
+Gli utenti possono accedere ai *servizi offerti* da NaTour *registrandosi alla piattaforma* fornendo il loro /username/, /email/ e /password/ oppure utilizzando il loro account /Google/. Una volta registrati o autenticati alla piattaforma, i Natourers scopriranno quanto sia semplice /cercare itinerari/ (anche utilizzando filtri più avanzati) o /crearne di nuovi/ (per mettere alla prova sé stessi o semplicemente condividerli con i propri amici) grazie al suo *design* =UI/UX= *semplice e intuitivo*. È possibile ricercare itinerari attraverso dei filtri per /nome/, per /possibilità di accesso ai disabili/, per /durata/, per /autore/, per /livello di difficoltà/, per /zona geografica/. I risultati, una volta terminata la ricerca, verranno visualizzati in una lista chiara ed auto esplicativa.
+
+NaTour è un software che *fornisce informazioni nel dettaglio degli itinerari disponibili* in piattaforma come la *lunghezza* del percorso, il *dislivello* massimo, la *durata* dell'escursione organizzata, la *latitudine* e *longitudine* dei punti di inizio e fine e tante altre. Inoltre, *permette agli utenti di inviare messaggi* privati l’un l’altro, ad esempio per chiedere maggiori informazioni al creatore di un itinerario oppure per stringere nuove amicizie in questo campo.
+
+NaTour rappresenta *l'evoluzione di una mappa vecchio stile* e mira a reinventare il modo in cui le persone pianificano i loro percorsi di trekking, indirizzandole attraverso i percorsi più panoramici e più fotogenici. La presenza di una *completa libreria di percorsi online* permetterà loro di scoprire nuovi luoghi e avventure da condividere sui social network, e di creare un'esperienza di viaggio *condivisa*, *interattiva* e *sicura*: infatti gli utenti possono *catturare* e condividere momenti nei loro viaggi mediante *l'upload di foto* e, in più, *segnalare eventuali fotografie non opportune* che, durante l’attenta valutazione da parte degli amministratori di NaTour, non potranno essere visualizzate nella schermata di dettaglio di un sentiero.
+
+Per rendere NaTour più competitiva in questo settore, prevediamo di aggiungere nuove funzionalità assai utili come la possibilità di aggiungere più tappe ad un singolo itinerario, la possibilità di condividere un itinerario su altre applicazioni esterne, la possibilità di lasciare recensioni e commenti nella schermata di dettaglio di un sentiero o, addirittura, la possibilità di visualizzare le previsioni meteorologiche della zona geografica dove si tiene un’escursione.
+
+
+In particolare:
++ Abbiamo deciso di dividere la piattaforma NaTour in due applicazioni:
+	+ La prima sarà dedicata solo ai Natourers, e forniremo tutte le funzionalità descritte sopra;
+	+ La seconda sarà dedicata solo agli amministratori e permetterà loro di visualizzare una dashboard di statistiche in tempo reale sul sistema, come il numero di itinerari totali, il numero di utenti registrati, il numero di chat room tra utenti e anche il numero di messaggi scambiati.
+	Abbiamo pensato di effettuare questa distinzione siccome Natourers e amministratori rappresentano due gruppi di utenti con esigenze troppo diverse.
+
++ Da un punto di vista progettuale, abbiamo pensato di seguire un modello di processo misto:
+	+ Per le fasi di analisi dei requisiti, prototipazione dell'interfaccia utente e progettazione, seguiremo un modello di processo a cascata;
+	+ Per le fasi di sviluppo e testing, invece, seguiremo un modello di processo iterativo.
+
+In questo modo, riusciremo ad iniziare la fase di sviluppo con un documento di specifica dei requisiti completo e formale, che ci permetterà di essere molto più produttivi. Invece la fase di sviluppo sarà iterativa perché, così facendo, riusciremo ad ottenere un prodotto software utilizzabile e testabile già a partire dalle prime iterazioni, che verrà progressivamente aggiornato con nuove funzionalità.
+
++ Da un punto di vista tecnico, ci sembra obbligatorio rendere i nostri prodotti software quanto più comprensibili, leggibili, riusabili e manutenibili possibile. Per far ciò, ci baseremo sui principi di progettazione SOLID:
+	+ Abbiamo pensato di progettare le nostre classi e interfacce in modo tale che siano quanto più indipendenti possibile l'una dall'altra, per ottenere un basso accoppiamento, e in modo tale che presentino solo attività e funzionalità strettamente legate tra loro (singola responsabilità), al fine di avere alta coesione;
+	+ Abbiamo preso in considerazione l'idea di realizzare classi aperte alle estensioni ma, allo stesso tempo, chiuse alle modifiche: questa importante proprietà ci permetterà, durante le iterazioni della fase di sviluppo, di non riscontrare grandi difficoltà nell'aggiungere nuove funzionalità senza che altre già sviluppate e testate richiedessero nuove modifiche o nuovi test.
+
+Per concludere, vi invitiamo a scaricare l’applicazione oggi stesso e a scoprire
+#+begin_center
+/"Un nuovo modo per fare trekking!/
+#+end_center
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+*** Requisiti funzionali
+Di seguito vengono elencati in dettaglio i requisiti funzionali del sistema \autocite{requisitiFunzionali}: 
+
+#+begin_export latex
+% RF 1
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF01}\\
+    \hline
+        Nome & Registrazione alla piattaforma\\
+    \hline
+        Descrizione & Il sistema deve consentire ad un utente non registrato di potersi registrare alla piattaforma indicando username email e password oppure utilizzando un proprio account Google\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 2
+\begin{center}
+    \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+      \hline
+        ID & \texttt{NaTour\_RF02}\\
+      \hline
+        Nome & Autenticazione alla piattaforma\\
+      \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato o un amministratore di poter accedere alla\\
+        & piattaforma indicando il proprio username e la password. In particolare, l'utente può autenticarsi anche utilizzando un proprio account Google\\
+      \hline
+    \end{tabular}
+\end{center}
+
+% RF 3
+  \begin{center}
+    \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+      \hline
+        ID & \texttt{NaTour\_RF03}\\
+      \hline
+        Nome & Cambio password\\
+      \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato di poter modificare la propria password corrente indicando una nuova password\\
+      \hline
+    \end{tabular}
+  \end{center}
+  
+% RF 4
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF04}\\
+    \hline
+        Nome & Effettuare ricerche di itinerari\\
+    \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato di poter effettuare ricerche di itinerari presenti nel sistema attraverso un sistema di filtri per nome, per durata, per zona geografica, per livello di difficoltà e per possibilità di accesso ai disabili\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 5
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF05}\\
+    \hline
+        Nome & Visualizzare un itinerario\\
+    \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato di poter visualizzare una schermata di dettaglio di uno  specifico itinerario in modo da poterne consultare le relative informazioni\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 6
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF06}\\
+    \hline
+        Nome & Creare un nuovo itinerario\\
+    \hline
+      Descrizione & Il sistema deve consentire agli utenti già registrati di poter creare nuovi itinerari da aggiungere in piattaforma specificando caratteristiche come città, zona geografica, lunghezza e così via, selezionando i punti di inizio e fine tramite una mappa interattiva o l'inserimento di un file GPX e, eventualmente, inserendo una fotografia.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 7
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF07}\\
+    \hline
+        Nome & Inviare messaggi privati\\
+    \hline
+        Descrizione & Il sistema deve consentire agli utenti già registrati di poter inviare messaggi privati l'un l'altro, ad esempio per  chiedere informazioni più dettagliate su un itinerario\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 8
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF08}\\
+    \hline
+        Nome & Visualizzare messaggi privati\\
+    \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato di poter accedere all'elenco delle conversazioni aperte con altri utenti già registrati.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 9
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF09}\\
+    \hline
+        Nome & Segnalare fotografie inappropriate\\
+    \hline
+        Descrizione & Il sistema deve consentire ad un utente già registrato di poter segnalare fotografie ritenute inappropriate\\
+        & secondo il suo parere. Il sistema, quindi, non deve visualizzare nella schermata di dettaglio di un itinerario le fotografie con una segnalazione in sospeso.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 10
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF10}\\
+    \hline
+        Nome & Visualizzare statistiche in tempo reale\\
+    \hline
+      Descrizione & Il sistema deve consentire ad un amministratore di poter visualizzare statistiche in tempo reale sui numeri dell'applicazione come il numero di utenti registrati oppure il numero di itinerari inseriti e così via.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RF 11
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        ID & \texttt{NaTour\_RF11}\\
+    \hline
+        Nome & Visualizzare la schermata di profilo\\
+    \hline
+      Descrizione & Il sistema deve consentire ad un utente già registrato di poter visualizzare una schermata di dettaglio di un  profilo utente in modo da poterne consultare le relative informazioni.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vfill
+\pagebreak
+#+end_export
+*** Requisiti non funzionali
+Di seguito vengono elencati i requisiti funzionali del sistema \autocite{requisitiNonFunzionali}: 
+
+#+begin_export latex
+% RNF 1
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        \textbf{ID} & \texttt{NaTour\_RNF01}\\
+    \hline
+        Nome & Performance di ricerca\\
+    \hline
+        Descrizione & Il sistema deve mostrare i risultati di una ricerca entro 3 secondi dall'avvio della stessa, almeno nel \texttt{90\%} dei casi\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RNF 2
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        \textbf{ID} & \texttt{NaTour\_RNF02}\\
+    \hline
+        Nome & Usabilità dell'applicazione\\
+    \hline
+        Descrizione & Un utente deve riuscire ad utilizzare la piattaforma, al massimo delle sue funzionalità, dopo una media di circa 2 ore di utilizzo\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RNF 3
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        \textbf{ID} & \texttt{NaTour\_RNF03}\\
+    \hline
+        Nome & Limitazione account spam\\
+    \hline
+        Descrizione & Il sistema deve richiedere la conferma dell'account di un utente mediante mail, al termine della registrazione\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RNF 4
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        \textbf{ID} & \texttt{NaTour\_RNF04}\\
+    \hline
+        Nome & Password Policy\\
+    \hline
+        Descrizione & Il sistema deve forzare l'utente a inserire una password di almeno 8 caratteri contenenti numeri, almeno una lettera maiuscola ed una minuscola\\
+    \hline
+  \end{tabular}
+\end{center}
+
+% RNF 5
+\begin{center}
+  \begin{tabular}{{|p{0.1\textwidth}|p{0.8\textwidth}|}}
+    \hline
+        \textbf{ID} & \texttt{NaTour\_RNF05}\\
+    \hline
+        Nome & Adattabilità al back-end\\
+    \hline
+        Descrizione & Il sistema deve essere adattabile ai possibili cambiamenti del back-end e quindi essere completamente slegato rispetto a quest'ultimo\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vfill
+\pagebreak
+#+end_export
+*** Individuazione del target degli utenti
+Il termine /target/ è adottato dalla lingua inglese e significa letteralmente /bersaglio/. In questo contesto rappresenta l’insieme dei clienti e delle persone da raggiungere nelle nostre azioni di comunicazione e di marketing, ovvero il mercato di destinazione composto dai potenziali destinatari della nostra applicazione, NaTour.
+
+Per l’individuazione del target degli utenti abbiamo, quindi, effettuato una vera e propria ricerca di mercato, suddivisa nelle fasi di /segmentazione del mercato/ e /identificazione dei target group/.
+
+#+ATTR_LATEX: :align |l|l|
+|---------------------------------------------------------------+----------------------------------------------------------|
+| *Segmentazione del mercato*                                     | *Identificazione dei target group*                         |
+|---------------------------------------------------------------+----------------------------------------------------------|
+| Dividere un mercato in vari segmenti permette di dividere     | Un target group è un insieme di persone con              |
+| la popolazione in target group che possono essere misurati in | caratteristiche simili (come indicato nelle note 3,      |
+| base a delle caratteristiche chiave i dati demografici        | 4 e 5) sui quali vogliamo porre l’attenzione per lo      |
+|                                                               | sviluppo dell’ applicazione. I consumatori che rientrano |
+|                                                               | nello stesso target group tendono a valutare gli stessi  |
+|                                                               | prodotti e servizi                                       |
+|---------------------------------------------------------------+----------------------------------------------------------|
+
+Per caratteristiche chiave si intendono dati come:
++ *Dati demografici*\autocite{demografici};
++ *Geolocalizzazione* \autocite{geolocalizzazione};
++ *Interessi* ed *opinioni* \autocite{opinioni}.
+
+Per riuscire in questo compito ci siamo posti le seguenti domande:
++ Chi accede al nostro prodotto?
++ Chi è interessato al suo utilizzo?
++ A quali bisogni del cliente vogliamo rispondere con la nostra applicazione?
++ Quali clienti otterranno benefici dalla nostra applicazione?
++ Ci sono nicchie di mercato a cui far riferimento?
++ Abbiamo dei Competitor?
+
+Per rispondere a queste domande, abbiamo fatto riferimento ai dati esposti sui siti web di condivisione di itinerari ed avventure come [[https://www.trekkingitalia.org/numeri][TrekkingItalia]] (in Italia) e [[https://www.alltrails.com/][AllTrails]] (nel resto del mondo). In particolare ci siamo affidati anche alle esperienze raccontate dai nostri amici di [[https://www.visitcampiflegrei.eu/][VisitCampiFlegrei]], attivi con molte escursioni nella zona di Napoli e Pozzuoli.
+
+Quindi, dopo aver intervistato alcuni esperti nel settore del trekking e delle passeggiate outdoor, abbiamo identificato le nostre esigenze in un target group molto ampio, per chiunque ami fare escursioni ed esplorare, dai giovanissimi sino agli over 60, rappresentato dalle seguenti "/user personas/" \autocite{personas}.
+
+#+begin_export latex
+\begin{minipage}{0.45\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\linewidth]{Personas/Eliana De Amicis.png}
+\end{minipage}%
+  \hfill%
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Personas/Gennaro Di Biase.png}
+\end{minipage}
+#+end_export
+
+#+begin_export latex
+\begin{minipage}{0.45\textwidth}% adapt widths of minipages to your needs
+    \includegraphics[width=\linewidth]{Personas/Maurizio Caccavale.png}
+\end{minipage}%
+  \hfill%
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Personas/Miriam Acunzo.png}
+\end{minipage}
+\vfill
+#+end_export
+#+LATEX: \pagebreak
+*** Valutazione dell'usabilità a priori
+/L’ingegneria dell’usabilità è un processo nel quale si specifica quantitativamente (e in anticipo) quali caratteristiche e in quale misura dovrà possedere il prodotto software finale. Questo processo è, poi, seguito dalla realizzazione effettiva del prodotto prototipato e dalla dimostrazione o validazione che esso possiede le caratteristiche pianificate./
+
+Questa scritta sopra è la definizione di ingegneria dell’usabilità:
+
++ La parola /ingegneria/ sottolinea la presenza di un approccio basato su regole standard e fondamenti scientifici che ci permette di realizzare i requisiti richiesti in modo efficace ed efficiente;
++ La parola /usabilità/, invece, indica che dobbiamo focalizzarci sul design dell’interfaccia utente del prodotto software da realizzare.
+
+Quindi, per effettuare una valutazione completa dell’usabilità del nostro prodotto software, seguiremo due fasi complementari e assolutamente non sostituibili l’una con l’altra:
+1. Una prima fase, detta di /valutazione euristica/ o di /valutazione dell’usabilità a priori/, in cui verranno eseguite valutazioni da parte di esperti di usabilità, appartenenti al team di sviluppo del prodotto software, senza alcun coinvolgimento dei clienti e degli *stakeholders*;
+2. Una seconda fase, detta /test dell’usabilità/ o di /valutazione dell’usabilità sul campo/, in cui verranno eseguite valutazioni da parte di un campione di utenti, rappresentativo del target identificato al punto 2.1.7, in un ambiente controllato da uno o più osservatori (esperti di usabilità).
+
+La prima fase viene effettuata durante le fasi di progettazione dell’interfaccia utente nell’ambiente di sviluppo, quando ancora non si ha a disposizione il prodotto finito, ma solo dei prototipi. In particolare, è possibile notare dalle seguenti tabelle quali sono le funzionalità che abbiamo implementato nei nostri prototipi e a quale livello di dettaglio.
+
+#+LATEX: \pagebreak
+#+begin_export latex
+\begin{center}
+  Classificazione dei prototipi e delle implementazioni rispetto alla completezza funzionale (Tabella 1/2)
+  \includegraphics[width=500px]{Prototipi/Tabella 1.png}
+\end{center}
+
+\begin{center}
+  Classificazione dei prototipi e delle implementazioni rispetto alla completezza funzionale (Tabella 2/2)
+  \includegraphics[width=500px]{Prototipi/Tabella 2.png}
+\end{center}
+#+end_export
+
+Classificazione dei prototipi e delle implementazioni rispetto alla completezza funzionale
+
+Gli esperti dell’usabilità, quindi, valuteranno i nostri prototipi forniti in fase di progettazione analizzando il comportamento complessivo del sistema (specificato tramite statecharts al punto 2.1.10) e verificando la loro conformità ad alcune /regole d’oro/, come le famose 8 regole d’oro di Ben Shneiderman o le altrettanto importanti 10 euristiche di Nielsen.
+
+Di seguito verranno elencate alcune di queste regole, seguite da una possibile risposta degli esperti di usabilità (verranno valutati solo i due casi d’uso significativi identificati al punto 2.1.2):
+
+1. Valutazione del primo caso d’uso: l’utente già registrato crea un nuovo itinerario
+   + *Interfaccia consistente e standard*
+
+       La presenza di elementi già visti in altre interfacce utente, come le frecce che puntano verso sinistra per indicare la possibilità all’utente di tornare indietro, rendono l’esperienza generale più semplice. Inoltre, i colori sono utilizzati egregiamente - il verde indica la conferma e il rosso indica i messaggi di errore.
+   + *Aiutare gli utenti a diagnosticare e correggere gli errori*
+
+       I messaggi di errore mostrati a seguito della scelta di un tipo di file con un’estensione non corretta (nelle schermate di selezione di un file GPX o di un’immagine) sono scritti con un linguaggio naturale ed indicano con precisione la soluzione che deve seguire l’utente per procedere correttamente.
+   + *Prevenzione degli errori*
+
+       È ottima la soluzione di impedire all’utente di procedere nella creazione di un nuovo itinerario se alcuni dei campi richiesti non sono stati riempiti. In questo modo, si elimina il problema di un errore di creazione dell’itinerario alla radice.
+   + *Flessibilità ed efficienza d’uso*
+
+       Purtroppo, una grave insufficienza notata durante questa valutazione è la mancanza di shortcuts che facilitino l’utilizzo del prodotto software ad utenti più esperti. Una possibile soluzione potrebbe essere quella di aggiungere campi con auto completamento nel form di creazione dell’itinerario.
+2. Valutazione del secondo caso d’uso: l’utente non registrato si registra alla piattaforma tramite email
+   + *Libertà e controllo da parte degli utenti*
+
+        Dato che gli utenti meno esperti potrebbero cliccare o toccare componenti del sistema per errore, è stata molto gradita la scelta di posizionare sia nella schermata di /Login/ che nella schermata di /Registrazione/ la possibilità di tornare indietro, rispettivamente, alla schermata di /Registrazione/ o /Login/.
+   + *Corrispondenza fra mondo reale e sistema*
+
+        I popup (sia di errore che non) che compaiono durante la registrazione dell’utente contengono dei messaggi chiari ed auto esplicativi, con parole, frasi e concetti familiari al sistema. Questo è un requisito non funzionale molto apprezzato in qualsiasi interfaccia utente.
+   + *Design minimalista ed estetico*
+
+        Siccome questo prodotto software è dedicato principalmente a persone appassionate di passeggiate e trekking, la scelta di colori del background rappresentanti la natura, come il celeste o il verde, è conforme all’ambito applicativo dei requisiti del sistema.
+   + *Visibilità dello stato del sistema*
+
+        Il sistema dovrebbe sempre informare gli utenti su ciò che sta accadendo. Il fatto che, facendo un esempio specifico, l’utente non viene avvisato in anticipo che è richiesta una password sicura di 8 caratteri abbassa di molto il grado di valutazione dell’usabilità. Una possibile soluzione potrebbe essere quella di introdurre una lista dei vincoli da rispettare nella scelta della password.
+
+#+LATEX: \pagebreak
+La valutazione dell’usabilità a priori termina con la realizzazione di un diagramma nel quale:
+
++ Sull’asse verticale sono riportati i valutatori;
++ Sull’asse orizzontale sono riportati i problemi di usabilità riscontrati durante la valutazione, ordinati secondo la facilità di essere individuati (più sono a destra, più sono facili da individuare);
++ L’intersezione tra un punto dell’asse orizzontale e uno dell’asse verticale è un quadratino nero. Indica che un valutatore ha riscontrato un problema.
+
+  
+#+begin_export latex
+\begin{center}
+  Diagramma 1. Risultato della valutazione dei prototipi annessi al primo caso d’uso
+  \includegraphics[width=500px]{Prototipi/Risultato valutazione prototipi 1.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+  Diagramma 2. Risultato della valutazione dei prototipi annessi al secondo caso d’uso
+  \includegraphics[width=500px]{Prototipi/Risultato valutazione prototipi 2.png}
+\end{center}
+#+end_export
+
+#+LATEX: \pagebreak
+*** Prototipazione funzionale via Statechart dell'interfaccia grafica
+Di seguito vengono riportati i diagrammi *Statechart* prodotti durante lo sviluppo della piattaforma *NaTour*, che rappresentano l'interazione dell'utente con l'interfaccia grafica:
+
+[[file:Statechart/Statechart 1.png]]
+
+#+ATTR_LATEX: :height 450px :width 550px
+[[file:Statechart/Statechart 2.png]]
+
+#+LATEX: \pagebreak
+*** Glossario
++ *Prototipo* $\rightarrow$ Un prototipo è il progetto astratto di un sistema che realizza una o più funzionalità del prodotto finito e può avere diversi gradi di dettaglio: dagli schizzi su carta, ai mockup statici e mockup funzionali fino all’interfaccia finale pronta per la fase di beta testing e rilascio.
++ *Principi SOLID* $\rightarrow$ Sono delle linee guida allo sviluppo di software orientati agli oggetti che aumentano il livello della qualità interna di un prodotto software descritte da /Robert C. Martin/ agli inizi degli anni 2000.
++ *Target* $\rightarrow$ Il termine /target/ è adottato dalla lingua inglese e significa letteralmente /bersaglio/. In questo contesto rappresenta l’insieme dei clienti e delle persone da raggiungere nelle nostre azioni di comunicazione e di marketing, ovvero il mercato di destinazione composto dai potenziali destinatari della nostra applicazione, NaTour.
++ *Escursionismo* $\rightarrow$ È un’attività motoria che si svolge all’aperto ed è basata sul camminare. Normalmente viene esercitata lungo sentieri e percorsi di diverso grado di difficoltà. Normalmente l'escursionismo si svolge in montagna o comunque in un ambiente naturale, e può essere accompagnata da attività naturalistiche quali l'osservazione degli uccelli, l'osservazione di specie botaniche o anche la visita di monumenti o fenomeni naturali posti lungo il percorso.
++ *Social Network* $\rightarrow$ Con l’espressione social network si identifica un servizio Internet che permette la realizzazione e la gestione di reti sociali virtuali. Il social network è un servizio di rete sociale nonché una piattaforma web che consente la comunicazione fra rete e utenti. Attraverso questa comunicazione si possono scambiare informazioni, messaggi, contenuti e tanto altro attraverso vari canali.
++ *Trekking* $\rightarrow$ Il trekking è uno sport accessibile a tutti, da praticare sia da soli che in compagnia, partecipando ad escursioni e/o visite guidate con gruppi di appassionati. È un’attività sportiva a metà tra l’arrampicata e l’escursionismo, ideale per chi ama passeggiare in mezzo alla natura e molto diffusa sia in Italia che in Europa e nel mondo. Il termine deriva dal verbo inglese to trek, che può essere tradotto in italiano con "/camminare lentamente/" o "/viaggiare a lungo/".
++ *Natourers* $\rightarrow$ Sono gli utenti registrati alla piattaforma NaTour.
++ *Amministratore NaTour* $\rightarrow$ Nel dominio dell'applicazione, ci si può riferire a questa figura anche come /admin/. Si tratta delle persone incaricate di provvedere alla gestione della piattaforma NaTour.
++ *UX Design* (User Experience) =/= *UI Design* (User Interface) $\rightarrow$ Per /UX Design/ si intende l'insieme dei processi rivolti ad aumentare la soddisfazione degli utenti migliorando e rendendo più intuitiva la navigazione in un sistema software. Invece, per /UI Design/, si intende l'insieme dei processi rivolti ad aumentare la soddisfazione degli utenti migliorando il modo in cui un prodotto o servizio si presenta, rendendolo più accattivante e invitante. Entrambe, quindi, riguardano, l’interazione degli utenti con un prodotto o servizio.
++ *Itinerario* $\rightarrow$ Il percorso che si segue o s’intende seguire in un viaggio, comprendente per lo più un certo numero di tappe. Rappresentazione grafica o descrizione scritta di un percorso. Nel dominio di questa applicazione viene utilizzato come sinonimo del termine /escursione/.
++ *Username* $\rightarrow$ È un insieme distintivo di caratteri alfabetici =e/o= numerici usati per identificare un Natourer e ottenere l’accesso sulla piattaforma NaTour.
++ *Email* $\rightarrow$ Con questo termine si intende l'indirizzo di posta elettronica che l'utente inserisce in fase di registrazione. Viene utilizzato per l'invio di alcuni codici di conferma (ad esempio per la conferma dell'account o il cambio password).
++ *Password* $\rightarrow$ È una sequenza di caratteri alfanumerici e di simboli che l'utente non registrato associa al proprio username in fase di registrazione alla piattaforma NaTour. Viene utilizzata per identificare ed autenticare in modo esclusivo un utente e permettergli l'accesso alla piattaforma NaTour.
++ *Account Google* $\rightarrow$ Con account si indica l'insieme di funzionalità, di strumenti e di contenuti attribuiti ad un particolare coppia <username, password> che identifica un singolo utente su una piattaforma. Per account Google, quindi, si intende l'account privato di un utente che viene utilizzato, nel contesto della nostra applicazione, per effettuare il single-sign-on.
++ *Single-Sign-On* $\rightarrow$ Può essere tradotto in italiano come autenticazione o identificazione unica. Indica la proprietà di una piattaforma di consentire ad un utente di effettuare un'unica autenticazione per accedere alle risorse informatiche di più sistemi software.
++ *Disabilità* $\rightarrow$ La disabilità può essere definita come la condizione personale di chi ha una ridotta capacità d’interazione con l’ambiente sociale rispetto a ciò che è considerata la norma. Per questo motivo è meno autonomo nello svolgere le attività quotidiane e spesso in condizioni di svantaggio nel partecipare alla vita sociale.
++ *Nome itinerario* $\rightarrow$ Si indica una sequenza di caratteri che identifica un itinerario nella piattaforma NaTour.
++ *Durata itinerario* $\rightarrow$ Si indica il tempo di svolgimento di un percorso a più tappe.
++ *Autore itinerario* $\rightarrow$ Si indica il Natourer che ha ideato, creato e stabilito il punto di inizio e di fine di un percorso e tutte le altre sue caratteristiche.
++ *Livello di difficoltà* $\rightarrow$ Si intende la valutazione della difficoltà, cioè la scala di difficoltà tecnica indicata nelle nostre escursioni, che prevede cinque livelli di difficoltà: facile (per tutti), non molto facile, medio, difficile e molto difficile (per escursionisti esperti). I diversi livelli di difficoltà tengono conto anche dell’impegno =fisico/atletico=, della lunghezza, del dislivello, della durata e dell'accessibilità per disabili. In questo modo si potrà scegliere il percorso che meglio si adegua all'esperienza e preparazione fisica di ogni persona.
++ *Lunghezza itinerario* $\rightarrow$ Si intende la lunghezza del percorso di un itinerario. Può essere calcolata come distanza tra le coordinate geografiche del punto di fine e il punto di inizio oppure tracciando il percorso completo.
++ *Dislivello itinerario* $\rightarrow$ Si intende la differenza delle altitudini calcolate nel punto di fine e nel punto di inizio del percorso di un itinerario.
++ *Zona geografica* $\rightarrow$ Una zona geografica è una porzione continua della superficie terrestre la cui estensione è caratterizzata da un'ampiezza non inferiore a qualche chilometro quadrato, distinta per caratteristiche proprie che possono variare dalla conformazione del terreno alla posizione geografica, al clima, alla fauna, alla flora, fino a caratteristiche dipendenti dall'azione dell'uomo, cioè cultura, storia e lingua. Nella nostra piattaforma NaTour distinguiamo cinque tipi di zone geografiche: collina, montagna, mare, città e pianura.
++ *Coordinate geografiche* (latitudine e longitudine) $\rightarrow$ Sono valori misurati in gradi utili per individuare con precisione la posizione di un punto sulla superficie terrestre. La latitudine è la distanza angolare di un punto dall'equatore e la longitudine è la distanza angolare di un punto da un arbitrario meridiano di riferimento lungo lo stesso parallelo del luogo.
++ *Upload* $\rightarrow$ Operazione consistente nel trasferire un file dal proprio dispositivo a un dispositivo remoto attraverso una rete.
+  
+#+LATEX: \pagebreak
+** Modelli di Dominio
+*** Classi, oggetti e relazioni di analisi
+Di seguito vengono riportati i diagrammi delle classi di Analisi prodotti durante lo sviluppo della piattaforma NaTour:
+
+#+begin_export latex
+\begin{center}
+    Diagramma di classi di Analisi inerente al \textit{requisito funzionale} n° \textbf{1}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF01 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerenti al \textit{requisiti funzionali} n° \textbf{2-3}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF02_03 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerente al \textit{requisito funzionale} n° \textbf{4}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF04 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerenti al \textit{requisiti funzionali} n° \textbf{5-9}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF05_09 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerente al \textit{requisito funzionale} n° \textbf{6}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF06 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerenti al \textit{requisiti funzionali} n° \textbf{7-8}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF07_08 - Analisi.png}
+\end{center}
+
+\pagebreak
+\begin{center}
+    Diagramma di classi di Analisi inerente al \textit{requisito funzionale} n° \textbf{10}
+
+    \includegraphics[width=500px, height=600px]{Class Diagram/Analisi/NaTour_RF10 - Analisi.png}
+\end{center}
+
+\begin{center}
+    Diagramma di classi di Analisi inerente al \textit{requisito funzionale} n° \textbf{11}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Analisi/NaTour_RF11 - Analisi.png}
+\end{center}
+#+end_export
+#+LATEX: \pagebreak
+*** Diagrammi di sequenza di analisi (per 2 casi significativi)
+I Sequence Diagram \autocite{sequenceDiagram} di seguito riportati sono da supporto alla rappresentazione grafica dei casi d'uso precedentemente descritti
+
+Di seguito vengono quindi riportati i diagrammi di sequenza relativi allo *use case diagram* =n° 1=:
+
+#+begin_export latex
+\includegraphics[width=.9\linewidth]{Sequence Diagram/Analisi/Use case 1.png}
+#+end_export
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+
+
+#+begin_export latex
+\includegraphics[width=.9\linewidth]{Sequence Diagram/Analisi/Creazione Nuovo Itinerario.png}
+#+end_export
+
+E allo *use case diagram* =n° 2=
+
+#+begin_export latex
+\includegraphics[width=.9\linewidth]{Sequence Diagram/Analisi/Use case 2.png}
+#+end_export
+*** Diagrammi di attività
+L'ultimo dei documenti UML di analisi dei requisiti che riportiamo è caratterizzato dai /Diagrammi di attività/ \autocite{activityDiagrams}, che hanno lo scopo di far meglio capire il flusso di esecuzione di ogni singola funzionalità offerta dal sistema.
+
+#+begin_export latex
+\begin{center}
+    Activity diagram inerenti al \textit{requisito funzionale} n° \textbf{1}
+
+    \includegraphics[width=.9\linewidth, height=500px]{Activity Diagram/Variante Email.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/Variante Google.png}
+\end{center}
+
+\pagebreak
+% Activity 2
+\begin{center}
+    Activity diagram inerenti al \textit{requisito funzionale} n° \textbf{2}
+
+    \includegraphics[height=600px]{Activity Diagram/Variante Email 2.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/Variante Google 2.png}
+\end{center}
+
+% Activity diagram 3
+\pagebreak
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{3}
+
+    \includegraphics[height=600px]{Activity Diagram/NaTour_RF03.png}
+\end{center}
+
+% Activity diagram 4
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{4}
+
+    \includegraphics[width=400px,height=550px]{Activity Diagram/NaTour_RF04.png}
+\end{center}
+
+\pagebreak
+% Activity diagram 5
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{5}
+
+    \includegraphics[width=500px]{Activity Diagram/NaTour_RF05.png}
+\end{center}
+
+\pagebreak
+% Activity diagram 6
+\begin{center}
+    Activity diagram inerenti al \textit{requisito funzionale} n° \textbf{6}
+
+    \includegraphics[height=600px]{Activity Diagram/Base.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF06/Importa un file GPX.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF06/Seleziona immagine dalla memoria interna.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF06/Seleziona punti su mappa.png}
+\end{center}
+
+\pagebreak
+% Activity diagram 7
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{7}
+
+    \includegraphics[height=580px]{Activity Diagram/NaTour_RF07.png}
+\end{center}
+
+% Activity diagram 8
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{8}
+
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF08.png}
+\end{center}
+
+% Activity diagram 9
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{9}
+
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF09.png}
+\end{center}
+
+
+\pagebreak
+% Activity diagram 10
+\begin{center}
+    Activity diagram inerente al \textit{requisito funzionale} n° \textbf{10}
+
+    \includegraphics[width=.9\linewidth]{Activity Diagram/NaTour_RF10.png}
+\end{center}
+
+% Activity diagram 11
+\begin{center}
+    Activity diagram inerenti al \textit{requisito funzionale} n° \textbf{11}
+
+    \includegraphics[width=.9\linewidth]{Activity Diagram/Variante Utente.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/Variante Altri utenti.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Activity Diagram/Variante Admin.png}
+\end{center}
+\pagebreak
+#+end_export
+* Documento di Design del Sistema
+** Analisi dell'architettura con esplicita definizione dei criteri di design
+*** Tecnologie utilizzate
+Con lo scopo di rendere sempre affidabile e sicura la piattaforma si è scelto di mettere in campo tutte le tecnologie conosciute durante le nostre esperienze lavorative. In particolare abbiamo fatto uso di:
++ Cloud services, offerto dal noto service provider /AWS/, di proprietà /Amazon Inc./, per la gestione dei dati degli utenti e admin iscritti alla piattaforma e delle immagini inerenti agli itinerari
+  + La gestione di tutti questi servizi è gestito attraverso il framework [[https://aws.amazon.com/it/amplify/][Amplify]] \autocite{AMPLIFY}
++ Il noto framework Spring Boot, che offre una soluzione /convention over configuration/ per il framework Spring di Java, che è stata preferita ad una gestione manuale che non offre web service come [[https://tomcat.apache.org/][Apache Tomcat]], necessari al corretto funzionamento della piattaforma;
++ Container \autocite{container} docker, per la gestione dei dati;
+*** Linguaggi e strumenti utilizzati
+In merito ai linguaggi adoperati per lo sviluppo di entrambi i moduli (Applicazione mobile rivolta ad Admin e agli Utenti, e il server che gestisce le richieste dei primi), la scelta è ricaduta su ~Java~ \autocite{JAVA}(versione 17), che ci ha permesso in tempi brevi di rendere pronta all'uso entrambi i moduli.
+
+La scelta per gli ambienti di sviluppo \autocite{ambienteDiSviluppo} su 2 prodotti sviluppati dalla Software House [[https://www.jetbrains.com/][JetBrains]]
++ [[https://developer.android.com/studio/][Android Studio]], per la parte di Android (utilizzata per l'applicativo mobile);
++ [[https://www.jetbrains.com/idea/][IntelliJ IDEA]], per la parte di Server (necessaria al corretto funzionamento dell'applicativo mobile).
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+Di seguito viene riportata, per ciascuna funzionalità, lo specifico modulo software che si è utilizzato per implementarla.
+*** Autenticazione
+Per l'autenticazione (sia degli /admin/ che degli /utenti/) si è fatto uso del modulo di Amazon AWS /Cognito/ \autocite{COGNITO} che mette a disposizione una pool \autocite{POOL} on demand per il salvataggio delle informazioni dei singoli utenti (previa una configurazione iniziale).
+
+Per mantenere una netta suddivisione degli admin e degli utenti si è preferito utilizzare due pool separate (non ha senso infatti tenere i dati di entrambi nello stesso luogo).
+
+Vincoli di unicità dei profili (sia degli utenti che degli admin) e validità delle loro credenziali sono affidate a questo software.
+
+Dai punti sopra citati si deduce che questa scelta permette di mantenere una forte scalabilità dei dati (infatti automaticamente AWS gestisce lo spazio utilizzato).
+*** Gestione del salvataggio delle immagini di utenti, admin e itinerari
+Per una forte scalabilità ci si è affidati al noto /Cloud Object Storage/ S3, sempre offerto da Amazon /AWS/, che previa autenticazione, permette:
++ Retrieval di immagini;
++ Salvataggio e caricamento di immagini da parte degli utenti (Definizione di una immagine di profilo e di immagini appartenenti ai singoli itinerari);
+*** Dati degli utenti e degli admin
+Per una forte ridondanza dei dati si è scelto di tener traccia dei dati anche sul Server (in modo da poter permettere in un futuro ipotetico cambi repentini delle tecnologie, evitando in questo modo il problema del *vendor lock-in* \autocite{LockIn}). Ha anche il compito di gestire i dati anche degli itinerari e tutti i riferimenti (foto, tappe, informazioni).
+
+Per rendere ciò possibile si è fatto affidamento al concetto di container sopra citato, che contiene una soluzione embedded \autocite{EMBEDDED} del noto DBMS [[https://www.postgresql.org/][PostgreSQL]], che comunicando con Spring boot, ne permette il salvataggio.
+
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+Di seguito una breve spiegazione di come è stato possibile il deployment rapido, attraverso l'utilizzo del programma docker-compose, che sfruttando la definizione del container nel file sotto citato, gestisce automaticamente le dipendenze:
+
+
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+# Di seguito viene riportato il contenuto del file necessario a docker-compose per il deploy del container
+# Definiamo '3' in quanto rappresenta l'ultima versione disponibile
+version: '3'
+
+# Docker Compose lavora con il concetto di `services` dove
+#                    1 service = 1 container
+# Utilizziamo la keyword 'services' per la creazione del servizio necessario al deploy di un database PostGres
+services:
+  # Il nome del nostro service sarà "database" (è possibile ovviamente modificarlo)
+  database:
+    # Selezionamo l'immagine docker ufficiale di Postgres da DockerHub (useremo l'ultima versione disponibile)
+    image: 'postgres:latest'
+
+    # Definiamo un nome per il container (risulta comodo in situazioni in cui si vada a deployare `n` container diversi)
+    container_name: 'pg_db'
+
+    # Definiamo un volume necessario al container per il salvataggio dei dati
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
+
+    # Come default Postgres utilizza la porta 5432.
+    # Volendo accedere al database dall'esterno dobbiamo definire una porta di condivisione del tipo
+    # [porta che si vuole usare sulla macchina]:[porta su cui vogliamo comunicare con il container]
+    ports:
+      - 5432:5432
+
+    # Di seguito definiamo delle variabili di ambiente necessarie al database e
+    # alla connessione che viene eseguita dal server (Spring boot)
+    environment:
+      POSTGRES_USER: # Nome dell'utente PostgreSQL
+      POSTGRES_PASSWORD: # Password dell'utente sopra definito
+      POSTGRES_DB: # Il nome del database PostgreSQL
+#+end_src
+*** Gestione dei dati degli utenti e degli admin loggati
+Per rendere l'applicazione sempre reattiva, abbiamo pensato di fare uso di una tecnologia built-in di Android, ovvero il database interno *SQLite*, che andiamo ad utilizzare per la gestione dell'identificativo dell'utente loggato, necessario alla fruizione dell'applicativo.
+
+Abbiamo constato che, sfruttando questa tecnologia, i tempi necessari al caricamento dei dati vengono dimezzati, rendendo rapida la richiesta di dati, necessari alla visualizzazione degli itinerari nell'applicazione.
+*** Gestione dei servizi per utenti e admin
+Come abbiamo detto in precedenza, al server è demandato il compito della gestione dei dati e la loro fruizione. Proprio per questo abbiamo deciso di gestire la richiesta dei dati delle rispettive applicazioni con la combinazioni dei 2 framework:
+#+begin_center
+*SpringBoot e Retrofit*
+#+end_center
+
+Il primo utilizzato dal Server, il secondo invece utilizzato da entrambe le applicazioni (rivolte agli utenti e agli admin).
+
+Questi 2 framework comunicano attraverso l'uso delle REST API \autocite{RESTAPI}, in modo tale che il Server faccia da produttore, mentre l'applicazione (e quindi di conseguenza l'admin o l'utente) da consumatore.
+
+In questo modo l'applicazione non deve far altro che inviare una richiesta HTTP (in maniera trasparente all'utilizzatore) alla suddetta API per ricevere tutti i dati da visualizzare in tempo reale.
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+** Design pattern utilizzati
+*** Backend
+Prendendo ispirazione dall'approccio architetturale a micro-servizi, ci è sembrato fin da subito fare affidamento, per la gestione del Backend (che come detto in precedenza si basa sul framework Springboot), al pattern architetturale:
+
+#+ATTR_LATEX: :width 500px :height 320px
+[[file:Risorse/MVC.png]]
+
+un design pattern, che ha permesso in tempi brevi una suddivisione netta e chiara dei componenti e dei loro compiti.
+
+Per maggiore chiarezza, riportiamo di seguito lo stato del progetto \autocite{STATOBACKEND}, al momento della stesura del documento :
+
+#+begin_export latex
+\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{Risorse/PackageBackend.png}}
+#+end_export
+
+Dove:
++ *Controller* $\rightarrow$ Package che mette a disposizione le rotte da utilizzare per le chiamate HTTP del client (l'applicativo mobile);
++ *DTO* $\rightarrow$ Package che mette a disposizione le classi che verranno usate per la mappatura con i Model utilizzati;
++ *exceptions* $\rightarrow$ Package che mette a disposizione delle eccezioni custom, che risultano più mirate in caso di errore;
++ *model* $\rightarrow$ Package che mette a disposizione i modelli che verranno utilizzati per la descrizione dei dati che si vuole andare a rappresentare, ovvero come sono caratterizzati
+  + Gli utenti;
+  + Gli admin;
+  + Gli itinerari e i loro attributi;
+  + Le chatroom e i messaggi a loro corrispondenti;
++ *repository* $\rightarrow$ Package che rappresenta il collegamento messo a disposizione da Springboot tra l'applicativo java e il database corrispondente;
++ *service* $\rightarrow$ Package che contiene tutta la logica di gestione delle operazioni utilizzate dalle classi controller corrispondenti;
++ *ServiceInterface* $\rightarrow$ Package che contiene le astrazioni delle classi presenti in *service*
++ *ServiceApplication* $\rightarrow$ Come si può intuire dal nome, è il cuore dell'applicativo.
+*** Frontend
+Per le applicazioni mobile (sia per utenti che per admin), si è deciso di prendere il meglio di 2 design pattern architetturali:
++ MVC (Model-View-Controller), già utilizzato per la gestione del Server;
++ MVP (Model-View-Presenter), un design pattern utilizzato nel campo mobile development.
+
+Analogamente a come fatto per il backend andiamo a definire lo stato del progetto, al momento della stesura del documento, per l'applicativo ad uso utente e ad uso admin \autocite{STATOFRONTEND}:
+
+#+LATEX: \vfill
+#+begin_export latex
+\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{Risorse/PackageFrontend.png}}
+#+end_export
+
+Dove:
++ *model* $\rightarrow$ Package che mette a disposizione i modelli che verranno utilizzati per la mappatura con quelli presenti sul Server;
++ *presenter* $\rightarrow$ Package che contiene i seguenti componenti:
+  + *adapter* $\rightarrow$ Package che mette a disposizione la logica delle viste dei dati dei singoli elementi all'interno della grafica dell'applicazione;
+  + *amplify* $\rightarrow$ Package che contiene tutti i metodi utilizzati per il collegamento con la piattaforma Amplify (utilizzata per la gestione delle credenziali di Cognito);
+  + *api* $\rightarrow$ Package che contiene tutti i metodi necessari alle chiamate HTTP al Server;
+  + *callbackinterface* $\rightarrow$ Package che contiene tutte le callback utilizzate durante le chiamate HTTP, necessarie all'ottenimento dei dati dal Server;
+  + *request* $\rightarrow$ Package che ha in sé l'implementazione delle gestione dei dati in seguito alle request HTTP;
+  + *retrofit* $\rightarrow$ Package che contiene tutti i singleton \autocite{SINGLETON} necessari al framework *Retrofit* per effettuare chiamate di tipo HTTP;
++ *utils* $\rightarrow$ Package che contiene  i seguenti componenti:
+  + *constants* $\rightarrow$ Contiene tutte le costanti necessarie al corretto funzionamento dell'applicativo;
+  + *handler* $\rightarrow$ Contiene gli handler dello stato dell'applicazione in caso di errore. Ha il compito di avvisare l'utente di un problema nella richiesta appena effettuata;
+  + *persistence* $\rightarrow$ Contiene la gestione del database locale necessario ad una gestione più veloce delle richieste;
++ *view* $\rightarrow$ Package che contiene i seguenti componenti:
+  + *activity* $\rightarrow$ Contiene le activity fondamentali dell'applicazione;
+  + *fragment* $\rightarrow$ Contiene le fragment fondamentali dell'applicazione;
+** Come abbiamo aumentato la visibilità del progetto
+Per rendere più visibile e competitivo il prodotto finale, abbiamo deciso di mettere in campo tutte le competenze a nostra disposizione, per produrre un sito web di presentazione (raggiungibile dal seguente [[https://natour2022.netlify.app/][link]]), a cui tutti i possibili nuovi utenti possano fare riferimento.
+
+Abbiamo messo a disposizione un portale, che permetta, a chi si avvicina al progetto, di mettersi in comunicazione con noi per ricevere assistenza o per chiarimenti, con un form anonimo (avendo in mente il rispetto per la privacy) raggiungibile al seguente [[https://natour2022.netlify.app/2022/01/contatti/][link]].
+
+Infine è stata aggiunta anche la possibilità di poter scaricare, in anteprima, l'applicazione, in attesa che venga rilasciata sul play store.
+#+LATEX: \pagebreak
+** Diagramma delle Classi di Design
+Riportiamo, come da titolo, i diagrammi delle classi di /Design/ che sono stati prodotti durante lo sviluppo della piattaforma /NaTour/:
+
+#+begin_export latex
+% Class diagram 1
+\begin{center}
+    Class diagram inerente al \textit{requisito funzionale} n° \textbf{1}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF01 - Design.png}
+\end{center}
+\vfill
+
+% Class diagram 2-3
+\begin{center}
+    Class diagram inerenti ai \textit{requisiti funzionali} n° \textbf{2-3}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF02_03 - Design.png}
+\end{center}
+\pagebreak
+
+% Class diagram 4
+\begin{center}
+    Class diagram inerente al \textit{requisito funzionale} n° \textbf{4}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF04 - Design.png}
+\end{center}
+
+\pagebreak
+% Class diagram 5-9
+\begin{center}
+    Class diagram inerenti ai \textit{requisiti funzionali} n° \textbf{5-9}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF05_09 - Design.png}
+\end{center}
+
+\pagebreak
+% Class diagram 6
+\begin{center}
+    Class diagram inerente al \textit{requisito funzionale} n° \textbf{6}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF06 - Design.png}
+\end{center}
+
+\pagebreak
+% Class diagram 7-8
+\begin{center}
+    Class diagram inerenti ai \textit{requisiti funzionali} n° \textbf{7-8}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF07_08 - Design.png}
+\end{center}
+
+\pagebreak
+% Class diagram 10
+\begin{center}
+    Class diagram inerente al \textit{requisito funzionale} n° \textbf{10}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF10 - Design.png}
+\end{center}
+
+\pagebreak
+% Class diagram 11
+\begin{center}
+    Class diagram inerente al \textit{requisito funzionale} n° \textbf{11}
+
+    \includegraphics[width=.9\linewidth]{Class Diagram/Design/NaTour_RF11 - Design.png}
+\end{center}
+\pagebreak
+#+end_export
+** Diagrammi di Sequenza di Design per 2 casi d'uso significativi
+Di seguito vengono riportati i diagrammi di sequenza per i 2 casi d'uso in precedenza presentati:
+
+[[file:Sequence Diagram/Design/USE CASE 1 - Design.png]]
+
+[[file:Sequence Diagram/Design/USE CASE 2 - Design.png]]
+
+
+#+LATEX: \pagebreak
+e inerenti alla gestione di =creazione/inserimento= di un nuovo itinerario:
+
+#+begin_export latex
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Sequence Diagram/Design/CreazioneNuovoItinerario-Design.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.9\linewidth]{Sequence Diagram/Design/InserimentoNuovoItinerario.png}
+\end{center}
+\pagebreak
+#+end_export
+** Definizione delle gerarchie funzionali
+Da una attenta analisi svoltasi durante lo sviluppo della piattaforma NaTour è risultato fondamentale tenere traccia degli spostamenti che un utente già registrato o un amministratore dell'app compie durante il suo utilizzo.
+
+Risulta ovvio, quindi, che devono essere evitati casi di inconsistenza in cui l'utente può trovarsi su percorsi errati.
+
+In questo documento riportiamo le gerarchie funzionali dei 2 applicativi sviluppati \autocite{DimGer} :
+#+begin_center
+Gerarchia di NaTour (lato utente)
+#+end_center
+
+#+begin_export latex
+\includegraphics[width=\linewidth, height=440px]{Definizione delle gerarchie funzionali/Definizione delle gerarchie funzionali.png}
+#+end_export
+
+#+begin_center
+Gerarchia di NaTour-Admin (lato admin)
+#+end_center
+
+[[file:Definizione delle gerarchie funzionali/Definizione delle gerarchie funzionali - Admin.png]]
+
+#+LATEX: \pagebreak
+* Codice sorgente sviluppato
+Il codice sorgente prodotto durante lo sviluppo di $NaTour^{\copyright}$ è disponibile sulla piattaforma [[https://github.com/][GitHub]], che ne ha permesso anche il versionamento.
+
+Essendo molto vicini al concetto di open-source, si è scelto fin da subito un tipo di licenza che fosse in linea con questo principio. È per questo che tutti i programmi necessari alla piattaforma /NaTour/ sono sotto licenza [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPL 3.0]] (che è possibile consultare anche nella repository di NaTour).
+
+Di seguito riportiamo un link per il download: [[https://github.com/luftmensch-luftmensch/Progetto-NaTour]] \autocite{informazioniRepository}
+#+LATEX: \vfill
+#+LATEX: \pagebreak
+* Definizione di un piano di testing
+Come si è potuto evincere dai vari seminari durante il corso, definire un piano di testing è una scelta fondamentale per una buona riuscita del software \autocite{testingProblem}.
+
+Durante la fase di implementazione si è deciso quindi di testare funzionalità appartenenti all'applicazione android, funzionalità che ai nostri occhi sono state ritenute essere le più esemplificative.
+* Valutazione sul campo dell'usabilità
+** Codice jUnit per Unit testing
+Per avere una maggiore certezza della validità e stabilità del nostro applicativo, abbiamo deciso di testare alcuni metodi, che riteniamo essere punti chiave del suo corretto funzionamento.
+
+Per fare ciò ci siamo affidati al noto framework [[https://junit.org/junit5/][JUnit]] \autocite{JUNIT}, arrivato alla versione 5 al tempo della stesura del documento.
+*** Prima esperienza con il framework JUnit
+Per essere in grado di eseguire testing nel miglior modo possibile abbiamo deciso di effettuare un primo testing abbastanza semplice, che esegua un paragone tra il package definito e una stringa corrispondente. Di seguito riportiamo la parte rilevante.
+
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+package com.natour;
+
+import android.content.Context;
+import android.util.Log;
+
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.*;
+@RunWith(AndroidJUnit4.class)
+public class AndroidTesting {
+    ...
+
+    // Controllo che il nome del package corrisponda alla stringa `com.natour`
+    @Test
+    public void useAppContext() {
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        // Ci aspettiamo di ricevere true come risposta del test
+        assertEquals("com.natour", appContext.getPackageName());
+    }
+
+    ...
+}
+#+end_src
+*** Test dell'applicativo
+Per la scelta dei metodi da testare abbiamo optato per un bacino variegato di funzionalità.
+
+In particolare, andremo a testare:
+1. Controllo e test di alcune funzioni (funzioni che sono trasparenti all'utente), in particolare
+   a. Due metodi per la gestione del Database locale [[https://sqlite.org/index.html][SQLite]], utilizzato per gestione dei dati dell'utente loggato;
+2. Test della funzione che ha lo scopo di controllare la validità dei dati inseriti dall'utente durante la fase di registrazione alla piattaforma (È chiaro che questa fase risulta particolarmente critica, in quanto l'inserimento dei dati in maniera non automatica è fortemente prona ad errori);
+3. Test della funzione che ha lo scopo di controllare la validità dei dati inseriti dall'utente durante la fase di recupero (e quindi cambio) password (È chiaro che questa fase risulta particolarmente critica, in quanto l'inserimento dei dati in maniera non automatica è fortemente prona ad errori);
+
+Di seguito riportiamo il testing della funzionalità descritta nel punto =1.a=:
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+package com.natour;
+
+import android.Manifest;
+import android.content.Context;
+import android.util.Log;
+
+import androidx.core.app.ActivityCompat;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.*;
+
+import com.natour.utils.constants.Constants;
+import com.natour.utils.persistence.LocalUser;
+import com.natour.utils.persistence.LocalUserDbManager;
+
+@RunWith(AndroidJUnit4.class)
+public class AndroidTesting {
+
+    // Necessari al corretto testing del metodo `inserimentoEControllo`
+    LocalUser localUser;
+    LocalUserDbManager dbManager;
+
+
+    ...
+
+    ...
+
+    /*
+        Testing dell'utilizzo del database locale.
+
+    Testiamo il metodo eseguendo i seguenti passaggi:
+        1. Inseriamo quindi un utente;
+        2. Controlliamo se il il database risulti vuoto (Ci aspettiamo ovviamente che la `response` sia falsa)
+
+    */
+    public boolean inserimentoEControllo(int id, String username, String urlFotoProfilo, String isLoggedWithGoogle){
+        dbManager = new LocalUserDbManager(InstrumentationRegistry.getInstrumentation().getTargetContext());
+        dbManager.openW();
+
+        // Per avere un feedback immediato durante il testing abbiamo deciso di fare uso di Log (che vengono mostrati durante l'esecuzione del testing)
+        Log.d("Android Testing", "Inizio inserimento dati");
+        dbManager.inserimentoDatiUtente(id, username, urlFotoProfilo, isLoggedWithGoogle);
+        boolean response = dbManager.isEmpty();
+        Log.d("Android Testing", "Stato del db in seguito all'inserimento: " + response);
+        dbManager.closeDB();
+        return response;
+    }
+
+
+    // Testiamo quindi il metodo precedentemente definito
+    @Test
+    public void testDatabaseManager(){
+        inserimentoEControllo(1, "AndroidTesting", "AndroidTesting", "No");
+    }
+
+}
+#+end_src
+
+Per il testing delle funzionalità descritte nel punto 2 e 3 è necessario fare affidamento ad una classe di mockup \autocite{JUNITMOCK}:
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+package com.natour;
+
+import java.util.regex.Pattern;
+
+public class ControlloCampiMock {
+    public ControlloCampiMock() { }
+
+    // Visto che il Toast non sono mockuppabili andiamo a modificare leggermente il metodo della SignUpActivity eliminando le chiamate con i Toast
+
+    // Per questo metodo utilizzo black box wect
+    public boolean controlloCampi(String username, String email, String password, String confermaPassword) throws IllegalArgumentException{
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(regex);
+
+        if((username == null) || (email == null) || (password == null) || (confermaPassword == null)){
+            throw new IllegalArgumentException();
+        }
+        if((username.isEmpty()) || (email.isEmpty()) || (password.isEmpty()) || (confermaPassword.isEmpty())){
+            return false;
+        }
+        if(!pattern.matcher(email).matches()){
+            return false;
+        }
+
+        if (password.length() < 8) {
+            return false;
+        }
+
+        if(!password.matches("(.*[0-9].*)") | !password.matches("(.*[A-Z].*)") | !password.matches("^(?=.*[_.()$&@]).*$")) {
+            return false;
+        }
+
+        if(!password.equals(confermaPassword)){
+            return false;
+        }
+        return true;
+    }
+
+    // Visto che il Toast non sono mockuppabili ricopio il metodo della LoginActivity eliminando le chiamate con i Toast
+    // Metodo che controlla che la nuova password sia valida (utilizziamo sempre la black box wect)
+    public boolean controlloRecuperoPassword(String nuovaPassword, String codiceConferma){
+        if ((nuovaPassword.isEmpty()) || (codiceConferma.isEmpty())) {
+            return false;
+        }
+        if (nuovaPassword.length() < 8) {
+            return false;
+        }
+        if (!nuovaPassword.matches("(.*[0-9].*)") | !nuovaPassword.matches("(.*[A-Z].*)") | !nuovaPassword.matches("^(?=.*[_.()$&@]).*$")) {
+            return false;
+        }
+        return true;
+    }
+
+}
+#+end_src
+
+Per il testing di questo metodo si è deciso di optare per il testing *black box* \autocite{BlackBox}.
+
+Il metodo in esame prendi in input 4 parametri di tipo ~stringa~ (username, email, password, confermaPassword). Sono state quindi individuate le seguenti classi di equivalenza:
++ CEU1 $\rightarrow$ Parametro ~username~ valido;
++ CEU2 $\rightarrow$ Parametro ~username~ vuoto;
++ CEU3 $\rightarrow$ Parametro ~username~ null;
++ CEE1 $\rightarrow$ Parametro ~email~ valida;
++ CEE2 $\rightarrow$ Parametro ~email~ vuota;
++ CEE3 $\rightarrow$ Parametro ~email~ null;
++ CEE4 $\rightarrow$ Parametro ~email~ che non contiene il carattere =@=;
++ CEE5 $\rightarrow$ Parametro ~email~ che non contiene il dominio;
++ CEP1 $\rightarrow$ Parametro ~password~ valida;
++ CEP2 $\rightarrow$ Parametro ~password~ vuota;
++ CEP3 $\rightarrow$ Parametro ~password~ null;
++ CEP4 $\rightarrow$ Parametro ~password~ più corta di 8 caratteri;
++ CEP5 $\rightarrow$ Parametro ~password~ che non contiene numeri;
++ CEP6 $\rightarrow$ Parametro ~password~ che non contiene caratteri speciali;
++ CEP7 $\rightarrow$ Parametro ~password~ che non contiene una lettera maiuscola;
++ CECP1 $\rightarrow$ Parametro ~confermaPassword~ che combacia con il parametro ~password~;
++ CECP2 $\rightarrow$ Parametro ~confermaPassword~ che non combacia con il parametro ~password~;
++ CECP3 $\rightarrow$ Parametro ~confermaPassword~ vuota;
++ CECP4 $\rightarrow$ Parametro ~confermaPassword~ nulla;
+
+
+
+Come già scritto nel commento a riga 10 della classe ControlloCampiMock, procederemo con una selezione di casi di test, basata su una combinazione delle classi di equivalenza individuate, adottando il criterio di copertura WECT (/Weak Equivalence Class Testing/). Con questo criterio, ci limiteremo a scrivere precisamente un caso di test per ogni classe di equivalenza non valida per ogni parametro in input, ed un caso di test per ogni classe di equivalenza valida del parametro che ha il massimo numero di classi di equivalenza valide tra tutti gli altri. Nel nostro caso, abbiamo scelto:
+
++ Il caso di test ~public void testRegistrazioneValida()~, che verifichi contemporaneamente la validità delle classi ~CEU1~, ~CEE1~, ~CEP1~, ~CECP1~;
++ Il caso di test ~public void testUsernameVuoto()~ che verifichi la validità della sola classe ~CEU2~;
++ Il caso di test ~public void testUsernameNull()~ che verifichi la validità della sola classe ~CEU3~;
++ Il caso di test ~public void testEmailVuota()~ che verifichi la validità della sola classe ~CEE2~;
++ Il caso di test ~public void testEmailNull()~ che verifichi la validità della sola classe ~CEE3~;
++ Il caso di test ~public void testEmailSenzaChiocciola()~ che verifichi la validità della sola classe ~CEE4~;
++ Il caso di test ~public void testEmailSenzaDominio()~ che verifichi la validità della sola classe ~CEE5~;
++ Il caso di test ~public void testPasswordVuota()~ che verifichi la validità della sola classe ~CEP2~;
++ Il caso di test ~public void testPasswordNulla()~ che verifichi la validità della sola classe ~CEP3~;
++ Il caso di test ~public void testPasswordBreve()~ che verifichi la validità della sola classe ~CEP4~;
++ Il caso di test ~public void testPasswordSenzaNumeri()~ che verifichi la validità della sola classe ~CEP5~;
++ Il caso di test ~public void testPasswordSenzaCaratteriSpeciali()~ che verifichi la validità della sola classe ~CEP6~;
++ Il caso di test ~public void testPasswordSenzaLettereMaiuscole()~ che verifichi la validità della sola classe ~CEP7~;
++ Il caso di test ~public void testPasswordMatchNonValido()~ che verifichi la validità della sola classe ~CECP2~;
++ Il caso di test ~public void testConfermaPasswordVuota()~ che verifichi la validità della sola classe ~CECP2~;
++ Il caso di test ~public void testConfermaPasswordNulla()~ che verifichi la validità della sola classe ~CECP2~;
+
+Otteniamo, quindi, i seguenti 14 casi di test. Abbiamo preferito l'utilizzo di questa strategia rispetto ad altre molto più robuste e sicure come SECT (/Strong Equivalence Class Testing/) o WCT (/Worst Case Testing/) per non ottenere un numero di casi di test esponenziale sul numero di parametri.
+
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+package com.natour;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ ,* Classe di test per il controllo della validità dei campi
+,*/
+public class ControlloCampiTest {
+    ControlloCampiMock controlloCampiMock;
+
+    @Before
+    public void setup(){
+       controlloCampiMock = new ControlloCampiMock();
+    }
+
+    // Test sullo username
+    @Test
+    public void testRegistrazioneValida(){
+        assertTrue(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "Prova123@", "Prova123@"));
+    }
+
+    @Test
+    public void testUsernameVuoto(){
+        assertFalse(controlloCampiMock.controlloCampi("", "valentinobocchetti59@gmail.com", "Prova123@", "Prova123@"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUsernameNull(){
+        controlloCampiMock.controlloCampi(null, "valentinobocchetti59@gmail.com", "Prova123@", "Prova123@");
+    }
+
+    // Test sulla mail
+    @Test
+    public void testEmailVuota(){
+        assertFalse(controlloCampiMock.controlloCampi("", "", "Prova123@", "Prova123@"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEmailNull(){
+        controlloCampiMock.controlloCampi("test123", null, "Prova123@", "Prova123@");
+    }
+
+    @Test
+    public void testEmailSenzaChiocciola(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59gmail.com", "Prova123@", "Prova123@"));
+    }
+
+    @Test
+    public void testEmailSenzaDominio(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@", "Prova123@", "Prova123@"));
+    }
+
+    // Test sulla password
+    @Test
+    public void testPasswordVuota(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "", "Prova123@"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPasswordNulla(){
+        controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", null, "Prova123@");
+    }
+
+    @Test
+    public void testPasswordBreve(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "P123@", "Prova123@"));
+    }
+
+    @Test
+    public void testPasswordSenzaNumeri(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "prova", "Prova123@"));
+    }
+
+    @Test
+    public void testPasswordSenzaCaratteriSpeciali(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "prova12", "Prova123@"));
+    }
+
+    @Test
+    public void testPasswordSenzaLettereMaiuscole(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "prova123@", "Prova123@"));
+    }
+
+    // Test su confermaPassword
+    @Test
+    public void testPasswordMatchNonValido(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "Prova123@", "Prova1234@"));
+    }
+
+    @Test
+    public void testConfermaPasswordVuota(){
+        assertFalse(controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "Prova123@", ""));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConfermaPasswordNulla(){
+        controlloCampiMock.controlloCampi("test123", "valentinobocchetti59@gmail.com", "Prova123@", null);
+    }
+}
+#+end_src
+
+
+Passiamo adesso invece all'analisi dell'ultimo metodo che si è scelto di testare (anche questo mediante testing black box).
+
+Il metodo prende in input 2 parametri di tipo ~stringa~ (nuovaPassword e codiceConferma). Sono state quindi individuate le seguenti classi di equivalenza:
++ CEP1 $\rightarrow$ Parametro ~nuovaPassword~ valida;
++ CEP2 $\rightarrow$ Parametro ~nuovaPassword~ vuota;
++ CEP3 $\rightarrow$ Parametro ~nuovaPassword~ che ha una lunghezza inferiore agli 8 caratteri;
++ CEP4 $\rightarrow$ Parametro ~nuovaPassword~ che non contiene numeri;
++ CEP5 $\rightarrow$ Parametro ~nuovaPassword~ che non contiene maiuscole;
++ CEP6 $\rightarrow$ Parametro ~nuovaPassword~ che non contiene caratteri speciali;
++ CECC1 $\rightarrow$ Parametro ~codiceConferma~ valido;
++ CECC2 $\rightarrow$ Parametro ~codiceConferma~ non valido;
+
+Da queste classi di equivalenza andremo a testare i seguenti metodi:
++ Il caso di test ~public void testPasswordValide()~ che verifichi la validità delle classi ~CEP1~ e ~CECC1~;
++ Il caso di test ~public void testPasswordVuotaControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CEP2~;
++ Il caso di test ~public void testCodiceConfermaVuotoControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CECC2~;
++ Il caso di test ~public void testPasswordBreveControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CEP3~;
++ Il caso di test ~public void testPasswordSenzaNumeriControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CEP4~;
++ Il caso di test ~public void testPasswordSenzaMaiuscoleControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CEP5~;
++ Il caso di test ~public void testPasswordSenzaCaratteriSpecialiControlloRecuperoPassword()~ che verifichi la validità della sola classe ~CEP6~.
+
+Otteniamo quindi, i seguenti 7 casi di test. Come per il testing precedente abbiamo preferito l'utilizzo di questa strategia rispetto ad altre molto più robuste e sicure come SECT (/Strong Equivalence Class Testing/) o WCT (/Worst Case Testing/) per non ottenere un numero di casi di test esponenziale sul numero di parametri.
+
+#+ATTR_LATEX: :options style=JAVA
+#+begin_src java
+package com.natour;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+  /**
+   * Classe di test per il controllo della validità dei campi
+  */
+public class ControlloCampiTest {
+    ControlloCampiMock controlloCampiMock;
+
+    @Before
+    public void setup(){
+       controlloCampiMock = new ControlloCampiMock();
+    }
+
+    ...
+
+    ...
+
+        // Testing del metodo controlloRecuperoPassword
+    @Test
+    public void testPasswordValide(){
+        assertTrue(controlloCampiMock.controlloRecuperoPassword("Prova123@", "12345"));
+    }
+
+        // Test del caso in cui la password sia vuota
+    @Test
+    public void testPasswordVuotaControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("", "12345"));
+    }
+
+        // Test del caso in cui il codice di conferma sia vuoto
+    @Test
+    public void testCodiceConfermaVuotoControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("Prova123@", ""));
+    }
+
+        // Test del caso in cui la password sia troppo corta
+    @Test
+    public void testPasswordBreveControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("Pro123@", "12345"));
+    }
+
+    // Test del caso in cui la password non contenga numeri
+    @Test
+    public void testPasswordSenzaNumeriControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("Provatest@", "12345"));
+    }
+
+    // Test del caso in cui la password non contenga lettere maiuscole
+    @Test
+    public void testPasswordSenzaMaiuscoleControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("prova123@", "12345"));
+    }
+
+    // Test del caso in cui la password non contenga caratteri speciali
+    @Test
+    public void testPasswordSenzaCaratteriSpecialiControlloRecuperoPassword(){
+        assertFalse(controlloCampiMock.controlloRecuperoPassword("Prova1234", "12345"));
+    }
+}
+#+end_src
+** Valutazione sull'usabilità sul campo, realizzata sul prodotto finito
+#+begin_center
+*Sommario*
+#+end_center
+Come già detto nel punto =2.1.9= di questo documento, la valutazione sul campo dell’usabilità consiste nel far eseguire ad un campione di utenti, rappresentativo del target identificato al punto =2.1.7=, un insieme di compiti tipici di utilizzo del sistema in un ambiente controllato da uno o più o più osservatori (esperti di usabilità).
+
+#+begin_center
+*Metodologia utilizzata*
+#+end_center
+L’interazione tra sistema e utente, in questa situazione, può avvenire attraverso varie tecniche:
+
++ *Utilizzo di prototipi di carta con tecnica del mago di Oz*
+
+    È necessaria una terza persona, ad esempio un progettista, che conosca egregiamente il sistema e ne simuli il comportamento “di nascosto”.
++ *Utilizzo di prototipi interattivi*
+
+    Si utilizzano applicativi software come Axure o Figma. Questi permettono la realizzazione di prototipi precisi e di alta qualità connessi tra loro tramite una serie di transizioni che consentono agli utenti di valutare il sistema.
++ *Utilizzo del prodotto software in fase di beta testing*
+
+    Dopo aver terminato le fasi di verifica con Unit Testing, Integration Testing e System Testing, si entra nelle fasi di validazione composte da Acceptance Testing, Usability Testing e Installation Testing.
+
+Per questa fase di valutazione sul campo dell’usabilità, abbiamo pensato di chiedere ai nostri valutatori di valutare direttamente il prodotto finito in fase di validazione attraverso uno Usability Test composto solo da test sommativi, in modo che vengano rilevati i punti deboli e vengano fornite indicazioni concrete per il miglioramento dell’interfaccia utente del sistema prima del rilascio finale.
+
+#+begin_center
+*Scelta dei valutatori e dell'ambiente*
+#+end_center
++ Abbiamo scelto i valutatori in modo che coprano quanti più tipi di utenti del nostro target, basandoci fortemente sul livello di conoscenza del dominio del sistema (nel nostro caso trekking, passeggiate outdoor, escursioni, ecc.) ma anche sul livello di familiarità con la tecnologia (es. applicazioni per smartphone, social networking, …). La scelta finale è rappresentata nella seguente tabella
+
+  
+#+begin_export latex
+\begin{center}
+  \includegraphics[width=500px]{Risorse/Scelta valutatori e ambiente.png}
+  Dimensioni del profilo degli utenti
+\end{center}
+#+end_export
+
++ *Compiti assegnati*
+
+Per effettuare il test di usabilità, abbiamo preso in considerazione le seguenti attività da far svolgere ai valutatori. Nella seguente lista sono indicate l’attività svolta, un tempo massimo preventivato per lo svolgimento dell’attività ed un esempio delle loro risposte:
+
++ Compito 1. Registrati alla piattaforma NaTour [10 minuti]
+
+Eliana De Amicis, nonostante abbia un basso livello di familiarità con le tecnologie mobile, dice di essersi sentita guidata durante tutta l’operazione, soprattutto grazie ai popup auto esplicativi e a dei colori di sfondo piacevoli. Hanno completato tutti l’attività con successo.
+
++ Compito 2. Ricerca un itinerario in collina [5 minuti]
+
+Miriam Acunzo non è riuscita a completare l’operazione nel tempo previsto siccome, inizialmente, non ha capito come attivare la ricerca con filtri avanzati. Per questo motivo, l’attività viene considerata un successo parziale. Successivamente, le è stato spiegato che il menù in alto a sinistra poteva essere “tenuto premuto” per mostrare un feedback che ne spiegasse il funzionamento.
+
++ Compito 3. Apri la mappa del percorso di un itinerario [10 minuti]
+
+Gli osservatori hanno notato che Eliana De Amicis durante lo svolgimento di questo compito ha riscontrato alcune difficoltà nell’apertura della schermata di dettaglio di un itinerario siccome provava a tener premuto sulla card del singolo itinerario.
+
++ Compito 4. Crea un nuovo itinerario che duri più di 3 ore [15 minuti]
+
+Cosimo Imparato ritiene che la mappa dove selezionare i punti non fornisca il giusto supporto perché alcune delle caratteristiche del percorso, come lunghezza o dislivello, le ha dovute calcolare personalmente attraverso delle ricerche più approfondite.			
+
++ Compito 5. Visualizza il numero di utenti totali registrati alla piattaforma NaTour [5 minuti]
+
+Tutti i valutatori sono stati in grado di completare quest'attività con successo nel tempo preventivato.
+
++ Compito 6. Invia un messaggio ad un utente a cui non ha mai inviato un messaggio [15 minuti]
+
+Miriam Acunzo era inizialmente perplessa sul motivo per cui non fosse presente un pulsante per inviare un nuovo messaggio direttamente nella schermata delle chat room. Successivamente, i valutatori le hanno spiegato che NaTour non è un software dedicato alla messaggistica e che, quindi, la possibilità di creare nuovi messaggi è presente solo nella schermata di dettaglio di un itinerario e, da lì, mettersi in contatto direttamente con il creatore dell'itinerario.
+
+#+LATEX: \pagebreak
+#+begin_center
+*Sintesi delle misure e analisi dei risultati*
+#+end_center
+Oltre ad un’osservazione qualitativa nel quale i valutatori hanno espresso il loro parere personale riguardo le attività proposte, durante il nostro test di usabilità ci siamo concentrati soprattutto anche sull’identificazione ed il raccoglimento di alcune misure oggettive. Durante la fase di progettazione, quando abbiamo pensato come svolgere gli Usability Test, abbiamo identificato le seguenti misure:
+
++ Il tasso di successo, cioè la percentuale di attività che sono state portate a termine con successo, tenendo conto anche del tempo impiegato da ogni valutatore per l’esecuzione di una singola attività;
++ L’analisi dei file di log ottenuti durante lo svolgimento delle attività di test.
+
+Il calcolo del tasso di successo è molto utile per validare la semplicità e la comprensibilità dell’interfaccia utente del sistema. È una misura percentuale che può tener conto anche dei compiti eseguiti solo parzialmente oppure dei compiti eseguiti in un tempo troppo lungo rispetto al tempo preventivato. I risultati del calcolo del tasso di successo sono mostrati nella seguente tabella:
+
+#+begin_export latex
+\begin{center}
+  \includegraphics[width=500px]{Risorse/Sintesi risultati.png}
+  Sintesi dei risultati di un test di usabilità
+\end{center}
+#+end_export
+
+Assegnando il valore =1= per le attività svolte con successo (/S/) e il valore =0.5= per le attività svolte parzialmente o completate oltre il tempo previsto (/P/), il tasso di successo può essere calcolato come il rapporto tra la somma del valore assegnato alle attività /S/ e il valore assegnato alle attività /P/, e il numero totale di attività eseguite, cioè:
+
+#+begin_center
+/Tasso di successo/ = $\frac{(19\ *\ 1\ +\ 5\ *\ 0.5)}{24}\ =\ \cong\ 90\ \%$
+#+end_center
+
+#+LATEX: \pagebreak
+Come detto prima, abbiamo accompagnato l’esecuzione dei test di usabilità dalla registrazione (logging) automatica degli eventi attivati dalle funzionalità di /Amplify/ e dalle richieste /HTTP/ utilizzando il framework /Google Analytics for Mobile Apps/, che fornisce informazioni dettagliate sull’utilizzo del prodotto software da parte degli utenti. Di seguito, vi riportiamo alcuni estratti presi dalle statistiche di utilizzo, accessibili dalla console di [[https://console.firebase.google.com/][FireBase]]:
+
+[[file:Firebase/Firebase activity.png]]
+
+[[file:Firebase/Firebase stability.png]]
+
+Di seguito invece vengono riportati i report che contengono informazioni su:
+1. Fidelizzazione;
+2. Modelli di smartphone che i nostri utenti utilizzano;
+3. Le schermate su cui i nostri utenti passano la maggior parte del tempo.
+
+[[file:Firebase/Report Fidelizzazione 1.png]]
+
+[[file:Firebase/Report Fidelizzazione 2.png]]
+
+[[file:Firebase/Report Modelli.png]]
+
+[[file:Firebase/Report Schermate.png]]
+
+Per avere una visione più dettagliata di file di logging dell'applicazione durante la sua esecuzione su un dispositivo reale durante questa fase di beta testing del prodotto software si faccia riferimento al file di log in allegato alla documentazione.
+#+LATEX: \pagebreak
+* Analisi dei tempi di sviluppo
+Di seguito viene riportata lo storico dei tempi di sviluppo sotto forma di timeline con una vista mese per mese i passaggi chiave dello sviluppo di $NaTour^{\copyright}$
+
+#+ATTR_LATEX: :width 500px :height 500px
+[[file:Timeline Progetto/timeline1.jpg]]
+
+#+ATTR_LATEX: :width 500px
+[[file:Timeline Progetto/timeline2.jpg]]
+* Contributori
+#+begin_export latex
+\begin{center}
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[width=0.5\linewidth]{../Contributors/Valentino.png}
+
+    Informazioni:
+    \begin{itemize}
+      \item Valentino Bocchetti
+      \item \href{mailto:vale.bocchetti@studenti.unina.it}{vale.bocchetti@studenti.unina.it} % Se clicco sul link permetto l'invio della mail
+      \item N86003405
+    \end{itemize}
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[width=.5\linewidth]{../Contributors/Mario.png}
+
+    Informazioni:
+    \begin{itemize}
+      \item Mario Gabriele Carofano
+      \item \href{mailto:m.carofano@studenti.unina.it}{m.carofano@studenti.unina.it} % Se clicco sul link permetto l'invio della mail
+      \item N86003228
+    \end{itemize}
+      
+  \end{minipage}
+\end{center}
+#+end_export
+* Riferimenti
++ [[https://www.businessintelligencegroup.it/come-identificare-i-target-clienti-per-le-ricerche-di-mercato/][Identificare i target per le ricerche di mercato]];
++ [[https://www.studiosamo.it/glossario/target/][Definizione di target]].

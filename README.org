@@ -1,0 +1,37 @@
+#+OPTIONS: date:nil title:nil toc:nil author:nil
+#+STARTUP: overview
+* Progetto Na-Tour
+#+BEGIN_HTML
+<div align="center">
+
+  <!-- License -->
+  <a href="https://github.com/luftmensch-luftmensch/Progetto-NaTour/blob/main/LICENSE"
+          ><img
+              src="https://img.shields.io/badge/License-GPL_v3-blue.svg?style=for-the-badge&color=red"
+              alt="License"
+      /></a>
+
+  <!-- Android -->
+  <a href="https://github.com/luftmensch-luftmensch/Progetto-NaTour/tree/main/NaTour/"
+          ><img
+              src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"
+              alt="Powered by Android"
+      /></a>
+</div>
+#+END_HTML
+[[file:Risorse/Title.png]]
+* Info Generali
+#+html: <p align="center" ><img src="./Risorse/NaTour.png"  width=250px height=250px  /></p>
+
+Questo progetto è l'implementazione della traccia di Ingegneria del Software (Anno 2021-2022).
+
+* Contributori
+#+BEGIN_HTML
+<a href="https://github.com/luftmensch-luftmensch">
+    <img src="./Risorse/Contributors/Valentino.png" width=60px height=60px>
+</a>
+
+<a href="https://github.com/mgcarofano">
+    <img src="./Risorse/Contributors/Mario.png" width=60px height=60px>
+</a>
+#+END_HTML

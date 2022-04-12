@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:elevation="3dp"
+    android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="15dp"
+    android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+    android:outlineSpotShadowColor="@color/tema_scuro_testi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TitoloTextView_mappa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/TitoloCardMappa"
+            android:textAlignment="textStart"
+            android:textColor="@color/tema_scuro_testi"
+            android:textSize="18sp" />
+        
+        <androidx.cardview.widget.CardView
+            android:id="@+id/MappaCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="100dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="@string/MappaImageView"
+                android:textColor="@color/black"
+                android:textSize="48sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/MappaImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/mappa_placeholder"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/MappaPlaceholderDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/DifficoltaLayout"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/DisabilitaLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/DifficoltaImageView_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/difficolta_non_molto_facile"
+                    android:contentDescription="@string/DifficoltaDescription"/>
+
+                <TextView
+                    android:id="@+id/DifficoltaTextView_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center|start"
+                    android:text="@string/DifficoltaItinerario"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/DisabilitaLayout"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/DifficoltaLayout"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/DisabilitaImageView_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/disabilita"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/DifficoltaDescription"/>
+
+                <TextView
+                    android:id="@+id/DisabilitaTextView_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/DisabilitaItinerario"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center|start"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
