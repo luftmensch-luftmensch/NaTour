@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Scritta da Valentino Bocchetti
+  ~ Copyright (c) 2022. All rights reserved.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.SignUpActivity">
+
+
+    <!-- Informazioni sulla pagina -->
+    <TextView
+        android:id="@+id/RichiestaPaginaBottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/InserisciCodiceDiConferma"
+        android:textSize="22sp"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Codice di conferma -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InserimentoCodiceDiVerifica"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint=""
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RichiestaPaginaBottomSheet"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#616161" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Pulsante per l'invio del codice -->
+    <Button
+        android:id="@+id/ConfermaCodiceSignUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="176dp"
+        android:text="@string/Conferma"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InserimentoCodiceDiVerifica"
+        app:layout_constraintVertical_bias="0.204" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

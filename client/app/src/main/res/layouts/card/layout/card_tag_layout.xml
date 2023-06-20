@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="15dp"
+    android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+    android:outlineSpotShadowColor="@color/tema_scuro_testi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/TitoloTextView_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/TitoloCardTag"
+            android:textAlignment="textStart"
+            android:textColor="@color/tema_scuro_testi"
+            android:textSize="18sp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/FlexBoxLayout_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap"
+            app:alignItems="stretch"
+            app:alignContent="stretch">
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

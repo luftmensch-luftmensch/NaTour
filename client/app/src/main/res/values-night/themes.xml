@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base dell'app -->
+    <!-- Scegliamo NoActionBar in modo da disattivarla
+         e non avere un doppione nelle Activity che già la hanno -->
+    <style name="Theme.NaTour" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Colori primari -->
+        <item name="colorPrimary">@color/verde_scuro</item>
+        <item name="colorPrimaryVariant">@color/verde_scuro_variant</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Colori secondari -->
+        <item name="colorSecondary">@color/verde_chiaro</item>
+        <item name="colorSecondaryVariant">@color/verde_chiaro_variant</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Colore Status Bar -->
+        <!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <!-- Altri temi -->
+        <item name="android:textColorHighlight">@color/celeste</item>
+    </style>
+</resources>

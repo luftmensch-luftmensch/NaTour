@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/HomeButton"
+        android:icon="@drawable/selector_home"
+        android:title="@string/HomeButton"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/ScopriButton"
+        android:icon="@drawable/search_24dp"
+        android:title="@string/ScopriButton"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/MessaggiButton"
+        android:icon="@drawable/selector_chat"
+        android:title="@string/MessaggiButton"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/ProfiloButton"
+        android:icon="@drawable/selector_account"
+        android:title="@string/ProfiloButton"
+        app:showAsAction="ifRoom"/>
+</menu>

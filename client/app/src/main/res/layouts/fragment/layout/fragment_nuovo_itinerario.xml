@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/NuovoItinerarioScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:orientation="vertical"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp">
+
+    <LinearLayout
+        android:id="@+id/NuovoItinerarioLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- No / Si per selezione immagine -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ConfermaSelezionaImmagineCardView_nuovo_it"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/SelezionaImmagineLayout_nuovo_it"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/TitoloTextView_immagineCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/ImmagineItinerarioTextView"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/NoSiButtonLayout_nuovo_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/TitoloTextView_immagineCard"
+                    tools:ignore="HardcodedText">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/NoButton_nuovo_it"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/tema_scuro_testi"
+                        android:text="No"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="30dp"
+                        app:rippleColor="@color/red" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/SiButton_nuovo_it"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/verde_scuro"
+                        android:text="Si"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="30dp"
+                        app:rippleColor="@color/tema_scuro_testi" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Informazioni layout -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/InformazioniPercorsoCardView_nuovo_it"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/InformazioniPercorsoLayout_nuovo_it"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/TitoloTextView_infoCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/TitoloCardInformazioni"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeItinerarioTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/NomeNuovoItinerario"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="255"
+                    app:counterOverflowTextColor="@color/red">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeItinerarioEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textPersonName"
+                        android:maxLength="255"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/DescrizioneItinerarioTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/DescrizioneNuovoItinerario"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="2000"
+                    app:counterOverflowTextColor="@color/red">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/DescrizioneItinerarioEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textMultiLine"
+                        android:scrollbars="vertical"
+                        android:gravity="top|start"
+                        android:minLines="4"
+                        android:maxLength="2000"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Caratteristiche layout -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CaratteristicheCardView_nuovo_it"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/CaratteristicheLayout_nuovo_it"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/CaratteristicheTextView_nuovo_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/TitoloCardCaratteristiche"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/tema_scuro_testi"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/CittaTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/CittaNuovoItinerario"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="255"
+                    app:counterOverflowTextColor="@color/red">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/CittaEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="textPersonName"
+                        android:maxLength="255"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ZonaGeograficaTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/ZonaNuovoItinerario"
+                    app:endIconDrawable="@drawable/arrow_drop_down_36dp"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTint="@color/tema_scuro_testi">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/ZonaAutoCompleteTextView"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:enabled="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/LunghezzaTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/LunghezzaNuovoItinerario"
+                    app:suffixText="km">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/LunghezzaEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/DislivelloTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/DislivelloNuovoItinerario"
+                    app:suffixText="metri">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/DislivelloEditText"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/DurataLayout_nuovo_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/OreTextInput_nuovo_it"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/OreNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/OreEditText_nuovo_it"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/MinutiTextInput_nuovo_it"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/MinutiNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/MinutiEditText_nuovo_it"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/SecondiTextInput_nuovo_it"
+                        style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/SecondiNuovoItinerario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/SecondiEditText_nuovo_it"
+                            style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/DurataErrorText_nuovo_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="16dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/red"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/DifficoltaTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/DifficoltaNuovoItinerario"
+                    app:endIconDrawable="@drawable/arrow_drop_down_36dp"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTint="@color/tema_scuro_testi">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/DifficoltaAutoCompleteTextView"
+                        style="@style/Natour.NuovoItinerario.TextInputLayout.EditText"
+                        android:enabled="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/TagRicercaTextInput"
+                    style="@style/NaTour.NuovoItinerario.TextInputLayout"
+                    android:hint="@string/TagNuovoItinerario">
+
+                    <com.natour.view.CustomTokenCompleteTextView
+                        android:id="@+id/TagRicercaTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="60dp"
+                        android:padding="15dp"
+                        android:textSize="16sp"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/DisabilitaCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/DisabilitaDescription" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Conferma layout -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ConfermaCardView_nuovo_it"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:backgroundTint="@color/tema_scuro_grigio_chiaro"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
+            android:outlineAmbientShadowColor="@color/tema_scuro_testi"
+            android:outlineSpotShadowColor="@color/tema_scuro_testi"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ConfermaLayout_nuovo_it"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/AnnullaButton_nuovo_it"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/tema_scuro_testi"
+                    android:text="@string/Annulla"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/red" />
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ConfermaButton_nuovo_it"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/verde_scuro"
+                    android:text="@string/Conferma"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/tema_scuro_testi" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

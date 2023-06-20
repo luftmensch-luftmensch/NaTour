@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>NaTour</title>
+<meta name="author" content="(Valentino Bocchetti - Mario Carofano)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<!-- Per ovviare alla customizzazione post export del file customizzo le impostazioni e inserisco un custom stylesheet -->
+<link rel="stylesheet" href="./theme.css" id="theme"/>
+<link rel="stylesheet" href="plugins/highlight/monokai.css">
+
+
+<section id="sec-title-slide" data-background="./sfondo.jpg">
+  <h1><a href="https://natour2022.netlify.app/"><img src="logo.png" alt="NaTour" width="10%" align="top"/></a>NaTour</h1>
+
+  <h4 class="subtitle">(Un nuovo modo per fare trekking)</h4>
+  <br>
+  <h2 class="author">Valentino Bocchetti - Mario Carofano</h2>
+
+  <img src="FedericoII.png" alt="FedericoII.png" width="8%" align="center"/>
+
+  <aside class="notes">
+    <p>
+        Prima di iniziare la presentazione, vi vorremmo informare della presenza di NaTour sul web.
+    </p>
+
+    <p>
+        Abbiamo infatti tirato su un sito web, che permetta non solo a voi clienti di conoscere la nostra implementazione del progetto, ma anche al mondo intero.
+    </p>
+
+    <p>
+        Vi lasciamo quindi il link per accedere al sito web in chat.
+    </p>
+  </aside>
+
+</section>
+
+<!-- Aggiungiamo uno stile per settare il testo scritto justified -->
+<style type="text/css">
+    .underline { text-decoration: underline; }
+    p { text-align: left; }
+</style>
+<section>
+<section id="slide-orgf9ef788">
+<h2 id="orgf9ef788">La nostra idea di NaTour</h2>
+<aside class="notes">
+<p>
+Dopo un lungo periodo di pandemia, durato 2 anni, è arrivato il momento di riavvicinarsi alla natura e all'aria aperta.
+</p>
+
+<p>
+NaTour è il miglior modo per farlo
+</p>
+
+</aside>
+
+<p class="fragment (appear)">
+<i>NaTour ©</i> nasce come prodotto di quanto appreso e studiato durante il corso di <b>Ingegneria del Software</b> nel AA. 2021-2022.
+</p>
+</section>
+<section id="slide-orgfe3f38d">
+<h3 id="orgfe3f38d">Su NaTour</h3>
+<p class="fragment (appear)">
+Se vi piacciono l’escursionismo e l’aria aperta, NaTour è l’app che fa per voi!
+</p>
+</section>
+<section id="slide-orgfe3f38d-split">
+
+<p>
+Il progetto si concretizza in 2 applicativi mobile (al momento offriamo solo un client android), offrendo:
+</p>
+<p class="fragment (appear)">
+Un'applicazione per gli appassionati di trekking che, una volta registrati, avranno a disposizione un social network per condividere le loro escursioni con la community;
+</p>
+
+</section>
+<section id="slide-orgfe3f38d-split">
+
+<p>
+Un'applicazione per gli admin che, una volta loggati,
+</p>
+<ul>
+<li class="fragment appear">Avranno a disposizione un modo di informarsi sulle statistiche di utilizzo dei servizi messi a disposizione degli utenti;</li>
+<li class="fragment appear">Una vista e una (futura) gestione delle segnalazioni che gli utenti, possono effettuare, con lo scopo ultimo di proteggere gli utenti da foto dal contenuto inappropriato.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb7f9cbf">
+<h3 id="orgb7f9cbf">Per registrarsi</h3>
+<p class="fragment (appear)">
+Gli utenti hanno la possibilità di registrarsi:
+</p>
+<ul>
+<li class="fragment appear">Utilizzando una semplice mail;</li>
+<li class="fragment appear">Accedendo con un account Google;</li>
+
+</ul>
+
+<p class="fragment (appear)">
+Gli admin, invece, avranno a disposizione delle credenziali autogenerate dal sistema.
+</p>
+</section>
+<section id="slide-orgbbbbd16">
+<h3 id="orgbbbbd16">Servizi offerti</h3>
+<p class="fragment (appear)">
+Una volta registrati gli utenti avranno la possibilità di:
+</p>
+<ul>
+<li class="fragment appear">Creare un itinerario, con la possibilità di un inserimento manuale dell'itinerario, potendo fare uso di file in formato <code>GPX</code>;</li>
+<li class="fragment appear">Visualizzare gli itinerari presenti sulla piattaforma sulla HomePage;</li>
+<li class="fragment appear">Visualizzare la mappa del singolo itinerario, sia mediante la visualizzazione testuale delle informazioni dell'itinerario, sia mediante una mappa interattiva;</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbbbbd16-split">
+<ul>
+<li>Un servizio di chatting rapido, con cui un utente ha la possibiltà di poter chiedere informazioni su un percorso creato da un altro <i>Natourer</i>.</li>
+
+</ul>
+</section>
+<section id="slide-org432e6d1">
+<h3 id="org432e6d1">Tecnologie utilizzate</h3>
+<p class="fragment (appear)">
+Con lo scopo di rendere sempre affidabile e sicura la piattaforma si è scelto di mettere in campo tutte le tecnologie conosciute durante le nostre esperienze lavorative. In particolare abbiamo fatto uso di:
+</p>
+</section>
+<section id="slide-org432e6d1-split">
+<ul>
+<li>Cloud services, offerto dal noto service provider <i>AWS</i>, di proprietà <i>Amazon Inc.</i>, per la gestione dei dati degli utenti e admin iscritti alla piattaforma e delle immagini inerenti agli itinerari
+<ul>
+<li class="fragment appear">La gestione di tutti questi servizi è gestito attraverso il framework <a href="https://aws.amazon.com/it/amplify/">Amplify</a></li>
+
+</ul></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Cognito
+</p>
+
+<p>
+Servizio che mette a disposizione una pool (Si intende una collezione di risorse che vengono conservate in modo da essere utilizzate nell'immediato. Nel nostro caso questa collezione corrisponde ad un bacino di dati di utenti e admin) on demand per il salvataggio delle informazioni dei singoli utenti (previa una configurazione iniziale).
+</p>
+
+<p>
+Per mantenere una netta suddivisione degli admin e degli utenti si è preferito utilizzare due pool separate (non ha senso infatti tenere i dati di entrambi nello stesso luogo).
+</p>
+
+<p>
+Vincoli di unicità dei profili (sia degli utenti che degli admin) e validità delle loro credenziali sono affidate a questo software.
+</p>
+
+
+<p>
+S3
+Per una forte scalabilità ci si è affidati al noto Cloud Object Storage, sempre offerto da Amazon <i>AWS</i>, che previa autenticazione, permette:
+</p>
+<ul>
+<li>Retrieval di immagini;</li>
+<li>Salvataggio e caricamento di immagini da parte degli utenti (Definizione di una immagine di profilo e di immagini appartenenti ai singoli itinerari);</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-org432e6d1-split">
+<ul>
+<li>Il noto framework Spring Boot, che offre una soluzione <i>convention over configuration</i> per il framework Spring di Java, che è stata preferita ad una gestione manuale che non offre web service come <a href="https://tomcat.apache.org/">Apache Tomcat</a>, necessari al corretto funzionamento della piattaforma;</li>
+
+</ul>
+<ul>
+<li class="fragment appear">Container docker, per la gestione dei dati affidabile nel tempo, che offre una soluzione plug &amp; play svincolata dall'hardware utilizzato.</li>
+
+</ul>
+
+</section>
+<section id="slide-org432e6d1-split">
+<p>
+Una soluzione di questo tipo è stata possibile anche grazie all'utilizzo di un file configurazione che ci ha permesso in pochi secondi di spostarci da un ambiente di testing (in locale) al deploy di una versione release del nostro prodotto.
+</p>
+
+<p>
+Di seguito riportiamo una versione leggermente semplificata di quello che abbiamo fatto per ottenere il risultato voluto:
+</p>
+
+<aside class="notes">
+<p>
+Di seguito viene riportato il contenuto del file necessario a docker-compose per il deploy del container
+</p>
+
+<p>
+Definiamo '3' in quanto rappresenta l'ultima versione disponibile
+</p>
+
+<p>
+Docker Compose lavora con il concetto di `services` dove 1 service = 1 container
+</p>
+
+<p>
+Utilizziamo la keyword 'services' per la creazione del servizio necessario al deploy di un database PostGres
+</p>
+
+<p>
+Il nome del nostro service sarà "database" (è possibile ovviamente modificarlo)
+</p>
+
+<p>
+Selezionamo l'immagine docker ufficiale di Postgres da DockerHub (useremo l'ultima versione disponibile)
+</p>
+
+<p>
+Definiamo un nome per il container (risulta comodo in situazioni in cui si vada a deployare `n` container diversi)
+</p>
+
+<p>
+Definiamo un volume necessario al container per il salvataggio dei dati
+</p>
+
+<p>
+Come default Postgres utilizza la porta 5432.
+</p>
+
+<p>
+Volendo accedere al database dall'esterno dobbiamo definire una porta di condivisione del tipo
+</p>
+
+<p>
+[porta che si vuole usare sulla macchina]:[porta su cui vogliamo comunicare con il container]
+</p>
+
+<p>
+Di seguito definiamo delle variabili di ambiente necessarie al database e
+</p>
+
+<p>
+alla connessione che viene eseguita dal server (Spring boot)
+</p>
+
+</aside>
+
+<pre><code data-line-numbers data-trim data-noescape>
+version: '3'
+services:
+  database:
+    image: 'postgres:latest'
+
+    container_name: 'pg_db'
+
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
+
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+</code></pre>
+</section>
+<section id="slide-org04fa567">
+<h3 id="org04fa567">Demo</h3>
+<p>
+Di seguito riportiamo una breve demo che mostra in azione <b>NaTour</b> durante il suo utilizzo:
+</p>
+</section>
+<section id="slide-org04fa567-split">
+
+<!-- È possibile anche inserire il path del file che si vuole caricare -->
+<video data-autoplay src="./natour.mp4"></video>
+</section>
+<section id="slide-orgdde4468">
+<h3 id="orgdde4468">Riferimenti</h3>
+<div style="width: 40%; float:left">
+  <ul>
+    <li><a href="https://natour2022.netlify.app/">NaTour sul web</a></li>
+    <li><a href="https://aws.amazon.com/it/">AWS</a></li>
+    <li><a href="https://www.docker.com/">Docker</a></li>
+    <li><a href="https://spring.io/projects/spring-boot">Springboot</a></li>
+    <li><a href="https://wiki.openstreetmap.org/wiki/Main_Page">OpenStreetMap</a></li>
+  </ul>
+</div>
+
+<div style="width: 40%; float:right">
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://github.com/square/retrofit">Retrofit</a></li>
+    <li><a href="https://bumptech.github.io/glide/">Glide</a></li>
+    <li><a href="https://m3.material.io/">Material Design 3</a></li>
+    <li><a href="https://revealjs.com/">RevealJS</a></li>
+  </ul>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga172809">
+<h2 id="orga172809">Chi siamo</h2>
+<div style="width: 35%; float:left">
+  <p><img src="file:///home/valentino/UNI/Progetto-NaTour/Risorse/Contributors/Valentino.png" alt="Valentino.png" width="45%" align="center"/></p>
+  <p><img src="file:///home/valentino/UNI/Progetto-NaTour/Risorse/Contributors/Mario.png" alt="Mario.png" width="45%" align="center"/></p>
+</div>
+
+<div style="width: 65%; float:right">
+  <p>
+    Siamo <a href="https://github.com/luftmensch-luftmensch/">Valentino</a> e <a href="https://github.com/mgcarofano/">Mario</a>, due studenti appassionati di tecnologia ed iscritti al <b>Corso di Laurea in Informatica</b> <i>all'Università</i> <a href="https://www.unina.it/">Federico II</a> di Napoli.
+  </p>
+  <br>
+  <p>
+    Con il mondo a portata di mano, Valentino e Mario riescono a trovare il tempo tra gli studi per sviluppare e mostrare le loro applicazioni.
+  </p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org8f0ee4d">
+<h2 id="org8f0ee4d">Ringraziamenti</h2>
+<p>
+Ringraziamo i professori <b>Franco Cutugno</b> e <b>Sergio di Martino</b> per lo splendido corso, che ci ha permesso di conoscere nuove interessanti tecnologie.
+</p>
+
+<p>
+Ringraziamo inoltre anche i dottorandi <b>Luigi Libero Lucio Starace</b> e <b>Marco Grazioso</b> per il supporto offertoci durante e dopo le lezioni
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org104a4f0">
+<h2 id="org104a4f0">Fine</h2>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="plugins/menu/menu.js"></script>
+<script src="plugins/highlight/highlight.js"></script>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes, RevealMenu, RevealHighlight], slideNumber:"c/t",
+menu: {side: 'right', width: 'normal', numbers: true, titleSelector: 'h1, h2, h3, h4, h5, h6', useTextContentForMissingTitles: true, hideMissingTitles: false, markers: true, custom: false, themes: false, themesPath: 'dist/theme/', transitions: true, openButton: true, openSlideNumber: true, keyboard: true, sticky: false, autoOpen: true, delayInit: false, openOnInit: false, loadIcons: true}, parallaxBackgroundImage: './background.jpg', parallaxBackgroundHorizontal: 130, parallaxBackgroundVertical: 3, backgroundTransition: 'zoom', hash: true, mouseWheel: false, width: 1900, height: 1060
+});
+
+</script>
+</body>
+</html>
